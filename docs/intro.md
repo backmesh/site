@@ -2,46 +2,36 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Backmesh Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Backmesh is a minimal SaaS that lets Flutter developers safely call private key APIs such as OpenAI, Stripe and Twilio amongst others without writing any backend code in a server or cloud function.
 
-## Getting Started
+### Motivation
 
-Get started by **creating a new site**.
+### How Backmesh Proxy works?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Create an account in the [dashboard](https://app.backmesh.com)
 
-### What you'll need
+1.  Select the authentication provider used in your app
+    [logos]
+2.  Enter the auth provider public key
+3.  Enter private api key (encrypted at all times)
+4.  Get a Backmesh proxy url
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Route API calls through your url `https://proxy.backmesh.com/yourbackmeshid` and use the user’s jwt token from your app’s authentication provider instead of the API private key.
 
-## Generate a new site
+```dart
+// Auth Provider: Firebase
+// App Type: Flutter Dart
+// Private Key API: OpenAI
 
-Generate a new Docusaurus site using the **classic template**.
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dart_openai/dart_openai.dart';
 
-The classic template will automatically be added to your project after you run the command:
 
-```bash
-npm init docusaurus@latest my-website classic
+OpenAI.baseUrl =
+    "https://proxy.backmesh.com/yourbackmeshid/"; // "https://api.openai.com/v1" is the default one.
+// set api secret key to jwt
+OpenAI.apiKey = await FirebaseAuth.instance.currentUser.getIdToken();
+await OpenAI.instance.chat(...)
 ```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
