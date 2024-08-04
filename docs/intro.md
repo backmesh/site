@@ -2,23 +2,23 @@
 sidebar_position: 1
 ---
 
-# Backmesh Intro
+# Intro
 
-Backmesh is a minimal SaaS that lets Flutter developers safely call private key APIs such as OpenAI, Stripe and Twilio amongst others without writing any backend code in a server or cloud function.
+Backmesh is a minimal SaaS that lets Flutter developers safely call private key APIs such as OpenAI or Twilio without writing any backend code in a server or cloud function.
 
 ### Motivation
 
+Developing a Flutter app can become particularly challenging when it involves calling a private key API with backend code. As of August 2024, platforms like Supabase and Firebase do not support Dart cloud functions. Additionally, Flutter packages often can’t be utilized in Dart backends due to the absence of UI dependencies. Consequently, Flutter developers are compelled to resort to languages like JavaScript, TypeScript, or Python, necessitating the rewriting of model and controller abstractions to handle database data on the backend. This can lead to increased complexity and duplicated effort.
+
 ### How it works?
 
-Create an account in the dashboard
+First, visit the Backmesh dashboard and create an account using GitHub or Google authentication.
 
-1.  Select the authentication provider used in your app
-    [logos]
-2.  Enter the auth provider public key
-3.  Enter private api key (encrypted at all times)
-4.  Get a Backmesh proxy url
+1. Select the authentication provider used in your app.
+2. Enter the public key of your authentication provider.
+3. Enter your private API key, which will be encrypted.
 
-Route API calls through your url `https://edge.backmesh.com/appid/proxyname` and use the user’s jwt token from your app’s authentication provider instead of the API private key.
+You will then receive a Backmesh proxy URL. Route your API calls through this URL (https://edge.backmesh.com/appid/proxyname) and use the user’s JWT token from your app’s authentication provider instead of the API private key.
 
 ```dart
 // Auth Provider: Firebase
