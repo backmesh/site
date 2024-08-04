@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
 # Intro
@@ -18,7 +19,7 @@ First, visit the Backmesh dashboard and create an account using GitHub or Google
 2. Enter the public key of your authentication provider.
 3. Enter your private API key, which will be encrypted.
 
-You will then receive a Backmesh proxy URL. Route your API calls through this URL (https://edge.backmesh.com/appid/proxyname) and use the user’s JWT token from your app’s authentication provider instead of the API private key.
+You will then receive a Backmesh proxy URL. Route your API calls through the Backmesh proxy URL and use the user’s JWT token from your app’s authentication provider instead of the API private key.
 
 ```dart
 // Auth Provider: Firebase

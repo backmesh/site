@@ -31,8 +31,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          routeBasePath: '/docs',
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -51,11 +52,11 @@ const config: Config = {
       logo: {
         alt: 'Backmesh Logo',
         src: 'img/logo.png',
+        style: { padding: '4px' }, // Added padding to the logo
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'sidebar',
+          to: 'docs',
           position: 'right',
           label: 'Docs',
         },
