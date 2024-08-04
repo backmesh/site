@@ -8,9 +8,9 @@ Backmesh is a minimal SaaS that lets Flutter developers safely call private key 
 
 ### Motivation
 
-### How Backmesh Proxy works?
+### How it works?
 
-Create an account in the [dashboard](https://app.backmesh.com)
+Create an account in the dashboard
 
 1.  Select the authentication provider used in your app
     [logos]
@@ -18,7 +18,7 @@ Create an account in the [dashboard](https://app.backmesh.com)
 3.  Enter private api key (encrypted at all times)
 4.  Get a Backmesh proxy url
 
-Route API calls through your url `https://proxy.backmesh.com/yourbackmeshid` and use the user’s jwt token from your app’s authentication provider instead of the API private key.
+Route API calls through your url `https://edge.backmesh.com/appid/proxyname` and use the user’s jwt token from your app’s authentication provider instead of the API private key.
 
 ```dart
 // Auth Provider: Firebase
@@ -30,7 +30,7 @@ import 'package:dart_openai/dart_openai.dart';
 
 
 OpenAI.baseUrl =
-    "https://proxy.backmesh.com/yourbackmeshid/"; // "https://api.openai.com/v1" is the default one.
+    "https://edge.backmesh.com/appid/proxyname"; // "https://api.openai.com/v1" is the default one.
 // set api secret key to jwt
 OpenAI.apiKey = await FirebaseAuth.instance.currentUser.getIdToken();
 await OpenAI.instance.chat(...)
