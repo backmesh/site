@@ -9,7 +9,9 @@ Backmesh is a minimal SaaS that lets Flutter developers safely call private key 
 
 ### Motivation
 
-Developing a Flutter app can become particularly challenging when it involves calling a private key API with backend code. As of August 2024, platforms like Supabase and Firebase do not support Dart cloud functions. Additionally, Flutter packages often can’t be utilized in Dart backends due to the absence of UI dependencies. Consequently, Flutter developers are compelled to resort to languages like JavaScript, TypeScript, or Python, necessitating the rewriting of model and controller abstractions to handle database data on the backend. This can lead to increased complexity and duplicated effort.
+Developing a Flutter app can become particularly challenging when it involves calling a private key API with backend code. As of August 2024, platforms like Supabase and Firebase do not support Dart cloud functions. Additionally, many Flutter packages can’t be utilized in Dart backends due to the absence of UI dependencies.
+
+As a result, Flutter developers often have to switch to languages like JavaScript, TypeScript, or Python for their backend code, which means rewriting model and controller logic to handle database operations. This can increase complexity and lead to duplicated effort, making the development process less efficient.
 
 ### How it works?
 
