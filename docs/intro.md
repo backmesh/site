@@ -25,6 +25,6 @@ await OpenAI.instance.chat(...)
 
 ### Motivation
 
-Developing a Flutter app can become particularly challenging when it involves calling a private key API with backend code. As of August 2024, platforms like Supabase and Firebase do not support Dart cloud functions. Additionally, many Flutter packages can’t be utilized in Dart backends due to the absence of UI dependencies.
+As of August 2024, none of the major platforms for developing Flutter apps like Supabase, Cloudflare, Vercel, or Firebase support Dart cloud functions. Additionally, many Flutter packages can’t be utilized in Dart backends due to the absence of UI dependencies. As a result, Flutter developers often have to rewrite model and controller logic to handle database operations a second time in Dart, Javascript or Python. This leads to duplicated effort and a slower development process.
 
-As a result, Flutter developers often have to switch to languages like JavaScript, TypeScript, or Python for their backend code, which means rewriting model and controller logic to handle database operations. This can increase complexity and lead to duplicated effort, making the development process less efficient.
+The primary use case for a Flutter app that requires a backend is being able to securely call an external, private key API. Backmesh allows Flutter apps to do this without a backend by storing the private API key and providing a JWT protected proxy with user-scoped access by leveraging the app's authentication provider.
