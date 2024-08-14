@@ -42,6 +42,15 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_OePPf9AzyvZDpCBgBD8iviy2Ux4ZaWwQ9S50DbfhFqo",
+      },
+    ],
+  ],
+
   themeConfig: {
     colorMode: {
       defaultMode: "light",
