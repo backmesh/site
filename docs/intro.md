@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Introduction
 
 Backmesh is a minimal SaaS for Flutter developers to safely call private key APIs, such as OpenAI in the example below, without writing any backend code in a server or cloud function.
 

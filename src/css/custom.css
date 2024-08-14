@@ -4,6 +4,17 @@
  * work well for content-centric websites.
  */
 
+/* Example using a web font service like Google Fonts or Adobe Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+h1, h2, h3, body {
+  font-family: 'Nunito', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #004aad;
