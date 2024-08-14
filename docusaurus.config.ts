@@ -1,41 +1,42 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: 'Backmesh',
-  tagline: 'Securely call private key APIs from Flutter apps without a backend',
-  favicon: 'img/favicon.ico',
+  title: "Backmesh",
+  tagline: "Securely call private key APIs from Flutter apps without a backend",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://backmesh.com',
+  url: "https://backmesh.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'backmesh', // Usually your GitHub org/user name.
-  projectName: 'backmesh', // Usually your repo name.
+  organizationName: "backmesh", // Usually your GitHub org/user name.
+  projectName: "backmesh", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          routeBasePath: '/docs',
+          routeBasePath: "/docs",
+          exclude: ["quickstart.md"],
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -43,29 +44,29 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: "light",
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'Backmesh',
+      title: "Backmesh",
       logo: {
-        alt: 'Backmesh Logo',
-        src: 'img/logo.png',
-        style: { padding: '4px' }, // Added padding to the logo
+        alt: "Backmesh Logo",
+        src: "img/logo.png",
+        style: { padding: "4px" }, // Added padding to the logo
       },
       items: [
         {
-          to: 'docs',
-          position: 'right',
-          label: 'Docs',
+          to: "docs",
+          position: "right",
+          label: "Docs",
         },
       ],
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['dart']
+      additionalLanguages: ["dart"],
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -9,18 +9,26 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Minimal',
+    title: 'Low latency',
     description: (
       <>
-        Requests are proxied to and from your app through Cloudflare's edge network so you don't have to spin up any servers or cloud functions
+        Requests are proxied through Cloudflare's edge with lower response times than most servers or cloud functions
       </>
     ),
   },
   {
-    title: 'Secure',
+    title: 'Secure storage and authentication',
     description: (
       <>
         Private API keys are securely encrypted and proxied requests are verified using your provider's JWT authentication
+      </>
+    ),
+  },
+  {
+    title: 'Configurable access control',
+    description: (
+      <>
+        API proxy request limits can be set per user over different time windows
       </>
     ),
   },
@@ -28,10 +36,10 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        <p style={{ padding: '10px' }}>{description}</p>
       </div>
     </div>
   );
