@@ -14,6 +14,6 @@ Let's quickly go over authorization and the two different types of authenticatio
 
 2. Authorization verifies that someone has access to something specific and grants access if applicable. Authorization requires authentication to happen first.
 
-For example, Firebase Firestore provides user authentication, but only properly configured rules provide authorization. Furthermore, only adding Firebase AppCheck can provide client app authentication.
+For example, Firebase provides user authentication, but only properly configured Firestore security rules provide authorization to your database. Furthermore, only adding Firebase AppCheck can provide client app authentication. More about that [here](https://firebase.google.com/docs/firestore/security/overview).
 
 In the case of a public API proxy, Backmesh performs user authentication to ensure that requests to the proxy securing your private key API come from one of your users. This does not provide authorization about which specific users are allowed to make which requests to the proxy, or how many requests a specific user can make. However, with Backmesh you can set rate limits across all your users to reasonably protect your API resources e.g. no user should be calling a given API more than X times per hour. It is possible to integrate with Stripe to be able to set authorization access rules for users based on their payment plan. If you are interested in this email hello at backmesh dot com.
