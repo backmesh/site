@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
           <Link
             className="button button--primary button--lg"
             to="/docs">
-            Documentation
+            Learn more
           </Link>
         </div>
     </Layout>
