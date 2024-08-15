@@ -34,9 +34,15 @@ export default function Home(): JSX.Element {
       </main>
         <div className={styles.buttons}>
           <Link
+            style={{ marginRight: '50px' }}
             className="button button--primary button--lg"
             to="https://forms.gle/an5hMGFmDuQ36L7B9">
             Get early access
+          </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs">
+            Documentation
           </Link>
         </div>
     </Layout>
