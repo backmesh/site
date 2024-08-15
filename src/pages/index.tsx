@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Securely call private key APIs from a client app without a backend">
+      description="Securely call private key APIs from client apps without a backend">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
