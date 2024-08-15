@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-Backmesh is a SaaS for Flutter developers to safely call private key APIs, such as OpenAI in the example below, without writing any backend code in a server or cloud function. It supports [CORs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events). This is what the code in your Flutter app would look like:
+Backmesh is a SaaS for Flutter developers to safely call private key APIs, such as OpenAI in the example below, without writing any backend code in a server or cloud function. It supports [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events). This is what the code in your Flutter app would look like:
 
 ```dart
 // Auth Provider: Firebase
