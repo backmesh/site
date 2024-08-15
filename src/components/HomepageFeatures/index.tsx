@@ -9,10 +9,10 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Low latency',
+    title: 'Proxy with CORS and SSE support',
     description: (
       <>
-        Requests are proxied through Cloudflare's edge with lower response times than most servers or cloud functions
+        Proxied requests support server side events and cross-origin resource sharing out of the box
       </>
     ),
   },
@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     title: 'Secure storage and authentication',
     description: (
       <>
-        Private API keys are securely encrypted and proxied requests are verified using your provider's JWT authentication
+        Private API keys are securely encrypted and proxied requests are verified using your auth provider's JWT authentication
       </>
     ),
   },
