@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     title: 'Secure storage and authentication',
     description: (
       <>
-        Private API keys are securely encrypted and proxied requests are verified using your auth provider's JWT authentication
+        Private API keys are securely encrypted and proxied requests are verified using your authentication provider's JWT
       </>
     ),
   },
