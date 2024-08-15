@@ -32,7 +32,7 @@ const config: Config = {
       {
         docs: {
           routeBasePath: "/docs",
-          exclude: ["quickstart.md"],
+          exclude: [],
         },
         blog: false,
         theme: {
