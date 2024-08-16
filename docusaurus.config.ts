@@ -62,7 +62,7 @@ const config: Config = {
         redirects: [
           {
             to: "https://forms.gle/DyceYMGhUesCJCEJ8", // The destination URL
-            from: ["/newsletter"], // The source URL(s)
+            from: ["/updates"], // The source URL(s)
           },
         ],
       },
@@ -91,7 +91,7 @@ const config: Config = {
         {
           to: "https://forms.gle/DyceYMGhUesCJCEJ8",
           position: "right",
-          label: "Newsletter",
+          label: "Updates",
         },
       ],
     },
