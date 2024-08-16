@@ -69,13 +69,18 @@ const config: Config = {
       logo: {
         alt: "Backmesh Logo",
         src: "img/logo.png",
-        style: { padding: "4px" }, // Added padding to the logo
+        style: { padding: "4px" },
       },
       items: [
         {
           to: "docs",
           position: "right",
           label: "Docs",
+        },
+        {
+          to: "https://forms.gle/DyceYMGhUesCJCEJ8",
+          position: "right",
+          label: "Newsletter",
         },
       ],
     },
