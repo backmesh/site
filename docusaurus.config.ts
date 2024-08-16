@@ -56,6 +56,17 @@ const config: Config = {
         apiKey: "phc_OePPf9AzyvZDpCBgBD8iviy2Ux4ZaWwQ9S50DbfhFqo",
       },
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            to: "https://forms.gle/DyceYMGhUesCJCEJ8", // The destination URL
+            from: ["/newsletter"], // The source URL(s)
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig: {
