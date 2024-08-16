@@ -4,13 +4,13 @@ slug: /firebase
 
 # Google Gemini and Firebase Auth
 
-This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your Flutter app.
+This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your Flutter app.
 
 The Backmesh dashboard won't have any API proxies so click `New API Proxy` to get started
 
-![Step 0 Screenshot](/firebase+gemini/step0.png)
+![Step 0 Screenshot](/emptydash.png)
 
-## Step 1: Set Google Gemini API details and rate limit
+## Step 1: Set Google Gemini API details and rate limit configuration
 
 Grab your [Google Gemini API key](https://aistudio.google.com/app/apikey) and enter it. This value will encrypted and no longer viewable once it is saved.
 
@@ -23,7 +23,7 @@ Then set the request limit you consider safe. This is set globally per user for 
 Once this rate limit is exceeded by a user, Backmesh will return 429 HTTP responses automatically until the time window passes. Make sure to handle this gracefully in your Flutter app. You can change this limit at any time in the Backmesh dashboard.
 :::
 
-## Step 2: Set Firebase project used for Authentication
+## Step 2: Set the Firebase project used for Authentication
 
 Go to the Firebase dashboard to grab the project ID and public project key
 
@@ -64,4 +64,4 @@ client = createModelWithBaseUri(
 )
 ```
 
-Backmesh proxy will take over from here and relay the API with the encrypted private token.
+Backmesh proxy will take over from here and relay the API request with the encrypted private token.
