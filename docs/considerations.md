@@ -9,8 +9,8 @@ Let's quickly go over authorization and the two different types of authenticatio
 
 1. Authentication verifies someone is who they say they are.
 
-   a. User authentication means we can identify which user is making a request and whether the user in question is valid.
-   b. Client app authentication means we can verify that the request is originating from a valid and untampered app client.
+   - User authentication means we can identify which user is making a request and whether the user in question is valid.
+   - Client app authentication means we can verify that the request is originating from a valid and untampered app client.
 
 2. Authorization verifies that someone has access to something specific and grants access if applicable. Authorization requires authentication to happen first.
 
