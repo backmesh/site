@@ -4,8 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Backmesh",
-  tagline:
-    "Keep all your code in Flutter. Securely call private key APIs without a backend.",
+  tagline: "Call private key APIs without a backend with rate limits per user",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
