@@ -18,7 +18,7 @@ function BrowserWindow({ children }: {
 
 export default function Home() {
   return (
-    <Layout title="Infra as SQL" description="Cloud infrastructure as data in PostgreSQL">
+    <Layout title="Backmesh" description="The Firebase for AI apps">
       <div className="hero hero">
         <div className="container">
           <div className="row">
