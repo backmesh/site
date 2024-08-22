@@ -2,9 +2,9 @@
 slug: /supabase
 ---
 
-# OpenAI, Supabase and React
+# OpenAI, Supabase and Javascript
 
-This tutorial will guide you through how to call the OpenAI API from a React app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
+This tutorial will guide you through how to call the OpenAI API from a Javascript app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
 
 The Backmesh dashboard won't have any API proxies so click `New API Proxy` to get started
 
@@ -38,9 +38,9 @@ Grab the Backmesh API proxy URL provided:
 
 ![Step 3 Screenshot](/supabase+openai/step3.png)
 
-Now you are ready to make API calls in React through the Backmesh proxy URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
+Now you are ready to make API calls in Javascript through the Backmesh proxy URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
 
-```tsx title="openai.tsx"
+```js title="openai.js"
 import OpenAI from "openai";
 
 const BACKMESH_PROXY_URL =

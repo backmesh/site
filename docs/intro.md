@@ -10,4 +10,4 @@ Backmesh is the Firebase for mobile and web apps (Javascript, Native Mobile, Flu
 The Backmesh proxy is hosted on Cloudflare's edge to proxy requests to offer lower response times than most servers and cloud functions. Once it is set up, Backmesh lets you look at generative AI API invocations and errors per user and cumulatively. Check out the tutorials to see how to integrate Backmesh in your web or mobile app:
 
 - [Flutter app using Firebase Authentication and Google Gemini API](/docs/firebase)
-- [React app using Supabase Authentication and OpenAI API](/docs/supabase)
+- [Javascript Web app using Supabase Authentication and OpenAI API](/docs/supabase)
