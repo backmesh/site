@@ -5,26 +5,9 @@ slug: /
 
 # Introduction
 
-Backmesh is a SaaS for any client app (Flutter, React, React Native, etc) to safely call private key APIs, such as OpenAI, without writing any backend code in a server or cloud function. Backmesh supports [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) out of the box. SSE is used by [OpenAI to stream HTTP responses](https://platform.openai.com/docs/api-reference/streaming). Backmesh is also hosted on Cloudflare's edge to proxy requests with lower response times than most servers or cloud functions. This is what the code in a Flutter app using Backmesh to call the OpenAI API would look like:
+Backmesh is the Firebase for mobile and web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) using generative AI private key APIs (OpenAI, Anthropic and Google Gemini). Backmesh tracks analytics and enforces rate limits per user without writing any backend code in a server or cloud function. Backmesh leverages your authentication provider's JWT to make sure only your users can use the AI proxy. The proxy supports [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) out of the box. SSE is used by [OpenAI](https://platform.openai.com/docs/api-reference/streaming) and other generative AI APIs to stream HTTP responses.
 
-```dart
-// Auth Provider: Firebase
-// App Type: Flutter Dart
-// Private Key API: OpenAI
+The Backmesh proxy is hosted on Cloudflare's edge to proxy requests to offer lower response times than most servers and cloud functions. Once it is set up, Backmesh lets you look at generative AI API invocations and errors per user and cumulatively. Check out the tutorials to see how to integrate Backmesh in your web or mobile app:
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:dart_openai/dart_openai.dart';
-
-
-OpenAI.baseUrl =
-    "https://edge.backmesh.com/appid/proxyname"; // "https://api.openai.com/v1" is the default one.
-// set api secret key to jwt
-OpenAI.apiKey = await FirebaseAuth.instance.currentUser.getIdToken();
-await OpenAI.instance.chat(...)
-```
-
-### Motivation
-
-As of August 2024, none of the major platforms for developing Flutter apps like Supabase, Cloudflare, Vercel, or Firebase support Dart cloud functions. Additionally, many Flutter packages can’t be utilized in Dart backends due to the absence of UI dependencies. As a result, Flutter developers often have to rewrite model and controller logic to handle database operations a second time in Dart, Javascript or Python. This leads to duplicated effort and a slower development process.
-
-The primary use case for a Flutter app that requires a backend is being able to securely call an external, private key API. Backmesh allows Flutter apps to do this without a backend by storing the private API key and providing a JWT protected proxy with user-scoped access by leveraging the app's authentication provider.
+- [Flutter app using Firebase Authentication and Google Gemini API](/docs/firebase)
+- [React app using Supabase Authentication and OpenAI API](/docs/supabase)

@@ -2,9 +2,9 @@
 slug: /firebase
 ---
 
-# Google Gemini and Firebase Auth
+# Gemini, Firebase Auth and Flutter
 
-This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your Flutter app.
+This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
 
 The Backmesh dashboard won't have any API proxies so click `New API Proxy` to get started
 
@@ -16,11 +16,10 @@ Grab your [Google Gemini API key](https://aistudio.google.com/app/apikey) and en
 
 ![Step 1 Screenshot](/firebase+gemini/step1.png)
 
-Many APIs use the `Authorization` header to receive the private API key, but Google Gemini API has a custom one called `x-goog-api-key`.
-Then set the request limit you consider safe. This is set globally per user for a configurable time window.
+Set the request limit you consider safe. This is set globally per user for a configurable time window.
 
 :::note
-Once this rate limit is exceeded by a user, Backmesh will return 429 HTTP responses automatically until the time window passes. Make sure to handle this gracefully in your Flutter app. You can change this limit at any time in the Backmesh dashboard.
+Once this rate limit is exceeded by a user, Backmesh will return 429 HTTP responses automatically until the time window passes. Make sure to handle this gracefully in your app. You can change this limit at any time in the Backmesh dashboard.
 :::
 
 ## Step 2: Set the Firebase project used for Authentication
@@ -33,7 +32,7 @@ And put them into the Backmesh API Proxy configuration
 
 ![Step 2 Screenshot](/firebase+gemini/step2.png)
 
-## Step 3: Safely use the Backmesh API proxy in your Flutter app using the Firebase Auth JWT
+## Step 3: Safely use the Backmesh API proxy in your app using the Firebase Auth JWT
 
 Grab the Backmesh API proxy URL provided:
 
