@@ -8,16 +8,24 @@ type FeatureItem = {
 };
 
 const FeatureList: FeatureItem[] = [
+  // {
+  //   title: 'Proxy with CORS and SSE support',
+  //   description: (
+  //     <>
+  //       Proxied requests support server side events and cross-origin resource sharing out of the box
+  //     </>
+  //   ),
+  // },
   {
-    title: 'Proxy with CORS and SSE support',
+    title: 'Easy integration with no restrictions',
     description: (
       <>
-        Proxied requests support server side events and cross-origin resource sharing out of the box
+        Proxy OpenAI, Anthropic and Gemini API requests through Backmesh from any web or mobile app. No custom SDK integration.
       </>
     ),
   },
   {
-    title: 'Secure proxy authentication and API key storage',
+    title: 'Secure proxy authentication and secret storage',
     description: (
       <>
         Proxied requests are verified using your authentication provider's JWT and private API keys are securely encrypted
@@ -28,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     title: 'Configurable access control',
     description: (
       <>
-        API proxy request limits can be set per user over different time windows
+        API proxy request limits can be set per user over different time windows so you can safely call the AI API 
       </>
     ),
   },

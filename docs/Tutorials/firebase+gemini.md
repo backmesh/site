@@ -2,7 +2,7 @@
 slug: /firebase
 ---
 
-# Google Gemini and Firebase Auth
+# Gemini, Firebase Auth and Flutter
 
 This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your Flutter app.
 
