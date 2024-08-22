@@ -11,31 +11,51 @@ h1, h2, h3, body {
   font-family: 'Nunito', sans-serif;
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
+.button.button--primary.button--lg {
+  font-family: 'Nunito', sans-serif;
 }
 
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #004aad;
-  --ifm-color-primary-dark: #00429c;
-  --ifm-color-primary-darker: #003a8c;
-  --ifm-color-primary-darkest: #003276;
-  --ifm-color-primary-light: #0053be;
-  --ifm-color-primary-lighter: #005bcc;
-  --ifm-color-primary-lightest: #0063db;
+  --ifm-color-secondary: #5de0e6; /* Updated */
+  --ifm-color-primary-background: rgba(0, 74, 173, 0.5); /* Updated with 10% opacity */
+  --ifm-color-secondary-background: rgba(93, 224, 230, 0.5); /* Updated with 10% opacity */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #5de0e6; /* Updated */
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+.hero--gradient, .footer {
+  background-image: linear-gradient(var(--ifm-color-primary-background), var(--ifm-color-secondary-background));
+}
+
+.card {
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* browser window */
+.browser-window {
+  border-radius: 0.5rem;
+}
+
+.browser-content {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.browser-dot {
+  height: 12px;
+  width: 12px;
+  margin: 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-top {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  background: #f1f1f1;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }

@@ -4,8 +4,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Backmesh",
-  tagline:
-    "Use any generative AI API without a backend with analytics and rate limits per user",
+  tagline: "The Firebase for AI apps",
+  // tagline:
+  //   "Use any generative AI API without a backend with analytics and rate limits per user",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
