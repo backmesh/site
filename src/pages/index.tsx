@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
                 <div className="card__body">
                   <p>
-                  Automatically instrument all LLM API calls to understand how it affects each user, e.g. error rates, costs, response times across models, etc
+                  Automatically instrument all LLM API calls to understand how it affects each user, e.g. error rates, token usage, costs, response times across models, etc
                   </p>
                 </div>
               </div>
