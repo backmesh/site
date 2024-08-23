@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-Backmesh is the Firebase for mobile and web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) as it allows calling generative AI private key APIs (OpenAI, Anthropic and Google Gemini) without writing any backend code in a server or cloud function. Backmesh uses your authentication provider's JWT to make sure only your users can call the AI API proxy. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
+Backmesh lets any mobile or web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) call generative AI private key APIs (OpenAI, Anthropic and Google Gemini) without writing any backend code in a server or cloud function. Backmesh uses your authentication provider's JWT to make sure only your users can call the AI API proxy. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
 
 ## Features
 
