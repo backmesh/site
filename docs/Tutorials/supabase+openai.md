@@ -2,9 +2,9 @@
 slug: /supabase
 ---
 
-# OpenAI, Supabase and Javascript
+# OpenAI, Supabase Auth and Javascript
 
-This tutorial will guide you through how to call the OpenAI API from a Javascript app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
+This tutorial will guide you through how to call the OpenAI API from a Javascript web app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
 
 The Backmesh dashboard won't have any API proxies so click `New API Proxy` to get started
 

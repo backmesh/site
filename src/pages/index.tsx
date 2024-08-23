@@ -24,7 +24,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">The Firebase for AI apps</h1>
-              <p className="hero__subtitle">Use any Gen AI API from your app without a backend with analytics and rate limits per user</p>
+              <p className="hero__subtitle">Call any Gen AI API from your app without a backend</p>
               <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>
             <div className="col col--6 padding--lg">
@@ -42,19 +42,31 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--lg">
-            <div className="col col--4 padding--sm">
+            <div className="col col--6 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Easy integration</h3>
+                  <h3>Analytics out of the box</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                  Use any Gen AI SDK from any web or mobile app. No custom SDK integration.
+                  Understand how your users are invoking the Gen AI API, e.g. how many errors, response times across models, etc
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col col--4 padding--sm">
+            <div className="col col--6 padding--sm">
+              <div className="card">
+                <div className="card__header">
+                  <h3>Rate limits per user</h3>
+                </div>
+                <div className="card__body">
+                  <p>
+                    Set API request limits and tracks errors per user, e.g. no user should be calling a Gen AI API more than 5 times per hour
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
                   <h3>Secure secret storage</h3>
@@ -65,19 +77,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="col col--4 padding--sm">
-              <div className="card">
-                <div className="card__header">
-                  <h3>Analytics and limits per user</h3>
-                </div>
-                <div className="card__body">
-                  <p>
-                    Set API request limits and tracks errors per user
-                  </p>
-                </div>
-              </div>
-            </div>
+            </div> */}
           </div>
           {/* <div className="row padding--lg">
             <BrowserWindow>
@@ -94,11 +94,11 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center">
             <h1 style={{width: '100%'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the Gen AI APIs. Proxied requests are verified with your auth provider's JWT and checked for rate limits.</p>
+            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the Gen AI APIs. Proxied requests are monitored, verified with your auth provider's JWT and checked for rate limits.</p>
           </div>
           <div className="text--center">
             <img
-              alt="Two way connection"
+              alt="Proxy"
               style={{width: '60%'}}
               src={'proxy.gif'}
             />

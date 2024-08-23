@@ -5,9 +5,14 @@ slug: /
 
 # Introduction
 
-Backmesh is the Firebase for mobile and web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) using generative AI private key APIs (OpenAI, Anthropic and Google Gemini). Backmesh tracks analytics and enforces rate limits per user without writing any backend code in a server or cloud function. Backmesh leverages your authentication provider's JWT to make sure only your users can use the AI proxy. The proxy supports [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) out of the box. SSE is used by [OpenAI](https://platform.openai.com/docs/api-reference/streaming) and other generative AI APIs to stream HTTP responses.
+Backmesh is the Firebase for mobile and web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) as it allows calling generative AI private key APIs (OpenAI, Anthropic and Google Gemini) without writing any backend code in a server or cloud function. Backmesh uses your authentication provider's JWT to make sure only your users can call the AI API proxy. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
 
-The Backmesh proxy is hosted on Cloudflare's edge to proxy requests to offer lower response times than most servers and cloud functions. Once it is set up, Backmesh lets you look at generative AI API invocations and errors per user and cumulatively. Check out the tutorials to see how to integrate Backmesh in your web or mobile app:
+## Features
+
+- Enforce rate limits per user e.g. no user should be calling the openAI API more than 5 times per hour.
+- Look at generative AI API invocations and errors per user and cumulatively e.g. how many errors, response times across models, etc.
+
+## Tutorials
 
 - [Flutter app using Firebase Authentication and Google Gemini API](/docs/firebase)
-- [Javascript Web app using Supabase Authentication and OpenAI API](/docs/supabase)
+- [Javascript web app using Supabase Authentication and OpenAI API](/docs/supabase)
