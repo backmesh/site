@@ -47,7 +47,7 @@ export default function Home() {
             <div className="col col--6 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Zero config LLM Analytics</h3>
+                  <h3>LLM Analytics without packages or SDKs</h3>
                 </div>
                 <div className="card__body">
                   <p>

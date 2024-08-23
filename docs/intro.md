@@ -11,7 +11,7 @@ Backmesh lets any mobile or web app (Javascript, Native Mobile, Flutter, React, 
 
 The Backmesh proxy uses your authentication provider's JWT to make sure only your users can call the LLM API and enforces rate limits per user e.g. no user should be calling the openAI API more than 5 times per hour. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
 
-## Zero config LLM Analytics
+## LLM Analytics without packages or SDKs
 
 Backmesh will automatically instrument LLM requests to let you understand LLM API invocations per user e.g. error rates, token usage, costs, response times across models, etc
 
