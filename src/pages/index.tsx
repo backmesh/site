@@ -61,7 +61,7 @@ export default function Home() {
                 </div>
                 <div className="card__body">
                   <p>
-                    Set API request limits and tracks errors per user, e.g. no user should be calling a Gen AI API more than 5 times per hour
+                    Set Gen AI API request limits per user, e.g. no user should be calling a Gen AI API more than 5 times per hour
                   </p>
                 </div>
               </div>
