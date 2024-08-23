@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function BrowserWindow({ children }: {
   children: ReactNode;
@@ -17,14 +18,15 @@ function BrowserWindow({ children }: {
 }
 
 export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title="Backmesh" description="The Firebase for AI apps">
+    <Layout title="Backmesh" description={siteConfig.tagline}>
       <div className="hero hero">
         <div className="container">
           <div className="row">
             <div className="col col--6 padding--lg">
-              <h1 className="hero__title">The Firebase for apps using Gen AI</h1>
-              <p className="hero__subtitle">Call any Gen AI API from your app without a backend</p>
+              <h1 className="hero__title">{siteConfig.tagline}</h1>
+              <p className="hero__subtitle">Supports all Gen AI APIs, and any web or mobile app</p>
               <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>
             <div className="col col--6 padding--lg">
