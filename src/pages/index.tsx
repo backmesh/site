@@ -26,7 +26,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Includes LLM analytics per user out-of-the-box, no SDKs required.</p>
+              <p className="hero__subtitle">Includes LLM analytics per user with no SDK required.</p>
               <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>
             <div className="col col--6 padding--lg">
