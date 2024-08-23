@@ -19,8 +19,8 @@ h1, h2, h3, body {
 :root {
   --ifm-color-primary: #004aad;
   --ifm-color-secondary: #5de0e6; /* Updated */
-  --ifm-color-primary-background: rgba(0, 74, 173, 0.5); /* Updated with 10% opacity */
-  --ifm-color-secondary-background: rgba(93, 224, 230, 0.5); /* Updated with 10% opacity */
+  --ifm-color-primary-background: rgba(0, 74, 173, 0.1); /* Updated with 10% opacity */
+  --ifm-color-secondary-background: rgba(93, 224, 230, 0.1); /* Updated with 10% opacity */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 

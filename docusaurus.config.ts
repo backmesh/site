@@ -82,11 +82,11 @@ const config: Config = {
         style: { padding: "4px" },
       },
       items: [
-        {
-          to: "docs",
-          position: "right",
-          label: "Docs",
-        },
+        // {
+        //   to: "docs",
+        //   position: "right",
+        //   label: "Docs",
+        // },
         {
           to: "https://forms.gle/DyceYMGhUesCJCEJ8",
           position: "right",
