@@ -23,7 +23,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col col--6 padding--lg">
-              <h1 className="hero__title">Firebase for apps using Gen AI</h1>
+              <h1 className="hero__title">The Firebase for apps using Gen AI</h1>
               <p className="hero__subtitle">Call any Gen AI API from your app without a backend</p>
               <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>

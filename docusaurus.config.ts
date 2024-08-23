@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Backmesh",
-  tagline: "Firebase for apps using Gen AI",
+  tagline: "The Firebase for apps using Gen AI",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
