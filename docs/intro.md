@@ -5,12 +5,15 @@ slug: /
 
 # Introduction
 
-Backmesh lets any mobile or web apps (Javascript, Native Mobile, Flutter, React, React Native, etc) call generative AI private key APIs (OpenAI, Anthropic and Google Gemini) without writing any backend code in a server or cloud function. Backmesh uses your authentication provider's JWT to make sure only your users can call the AI API proxy. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
+Backmesh lets any mobile or web app (Javascript, Native Mobile, Flutter, React, React Native, etc) call generative AI private key APIs (OpenAI, Anthropic and Google Gemini) without writing any backend code in a server or cloud function.
 
-## Features
+## How Backmesh works
 
-- Enforce rate limits per user e.g. no user should be calling the openAI API more than 5 times per hour.
-- Look at generative AI API invocations and errors per user and cumulatively e.g. how many errors, response times across models, etc.
+The Backmesh proxy uses your authentication provider's JWT to make sure only your users can call the generative AI API and enforces rate limits per user e.g. no user should be calling the openAI API more than 5 times per hour. Backmesh keeps your private API keys securely encrypted at all times and is hosted on Cloudflare's edge to offer lower response times than most servers and cloud functions.
+
+## Zero config Gen AI Analytics
+
+Backmesh will automatically instrument Gen AI requests to let you understand generative AI API invocations per user e.g. how many errors, response times across models, experiment with different prompts etc.
 
 ## Tutorials
 

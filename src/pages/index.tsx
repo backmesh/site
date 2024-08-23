@@ -47,11 +47,11 @@ export default function Home() {
             <div className="col col--6 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Analytics out of the box</h3>
+                  <h3>Zero config Gen AI Analytics</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                  Understand how your users are invoking the Gen AI API, e.g. how many errors, response times across models, etc
+                  Automatically instrument all Gen AI API calls to understand how it affects each user, e.g. error rates, response times across models, etc
                   </p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center">
             <h1 style={{width: '100%'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the Gen AI APIs. Proxied requests are monitored, verified with your auth provider's JWT and checked for rate limits.</p>
+            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the Gen AI APIs. Proxied requests are automatically verified with your auth provider's JWT, checked for rate limits and instrumented.</p>
           </div>
           <div className="text--center">
             <img
@@ -113,12 +113,14 @@ export default function Home() {
             <h1 style={{width: '100%', paddingBottom: '80px'}}>Ready to get started?</h1>
           </div>
           <div className="row text--center">
-            <div className="col">
+            <div className="col col--3"></div>
+            <div className="col col--3">
               <button className="button button--primary button--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>
-            <div className="col">
+            <div className="col col--3">
               <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
             </div>
+            <div className="col col--3"></div>
           </div>
         </div>
       </div>
