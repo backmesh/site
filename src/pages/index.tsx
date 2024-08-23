@@ -26,7 +26,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Supports all Gen AI APIs, and any web or mobile app</p>
+              <p className="hero__subtitle">Includes LLM monitoring and analytics out-of-the-box</p>
               <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
             </div>
             <div className="col col--6 padding--lg">
@@ -47,11 +47,11 @@ export default function Home() {
             <div className="col col--6 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Zero config Gen AI Analytics</h3>
+                  <h3>Zero config LLM Analytics</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                  Automatically instrument all Gen AI API calls to understand how it affects each user, e.g. error rates, response times across models, etc
+                  Automatically instrument all LLM API calls to understand how it affects each user, e.g. error rates, costs, response times across models, etc
                   </p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export default function Home() {
                 </div>
                 <div className="card__body">
                   <p>
-                    Set Gen AI API request limits per user, e.g. no user should be calling a Gen AI API more than 5 times per hour
+                    Set LLM API request limits per user, e.g. no user should be calling the OpenAI API more than 5 times per hour
                   </p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center">
             <h1 style={{width: '100%'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the Gen AI APIs. Proxied requests are automatically verified with your auth provider's JWT, checked for rate limits and instrumented.</p>
+            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers between your web or mobile app and the LLM APIs. Proxied requests are automatically verified with your auth provider's JWT, checked for rate limits and instrumented.</p>
           </div>
           <div className="text--center">
             <img
