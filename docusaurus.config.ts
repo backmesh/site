@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Backmesh",
-  tagline: "Use LLMs in your app without a backend",
+  tagline: "Securely call LLMs in your app without a backend",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
