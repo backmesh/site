@@ -88,6 +88,11 @@ const config: Config = {
         //   label: "Docs",
         // },
         {
+          to: "/pricing",
+          position: "right",
+          label: "Pricing",
+        },
+        {
           to: "https://forms.gle/DyceYMGhUesCJCEJ8",
           position: "right",
           label: "Updates",
