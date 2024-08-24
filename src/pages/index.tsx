@@ -21,7 +21,7 @@ function BrowserWindow({ children, style }: {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title="Backmesh" description={siteConfig.tagline}>
+    <Layout description={siteConfig.tagline}>
       <div className="hero hero">
         <div className="container">
           <div className="row">
