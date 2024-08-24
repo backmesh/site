@@ -29,7 +29,7 @@ export default function Home() {
               <h1 className="hero__title">{siteConfig.tagline}</h1>
               <p className="hero__subtitle">Securely call LLM APIs from your app without a backend. No SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
+              <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://discord.gg/FfYyJfgUUY"}>Get early access</button>
             </div>
             <div className="col col--6 padding--lg">
               <BrowserWindow>
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="row text--center">
             {/* <div className="col col--3"></div> */}
             <div className="col">
-              <button className="button button--primary button--lg" onClick={() => window.location.href="https://forms.gle/an5hMGFmDuQ36L7B9"}>Get early access</button>
+              <button className="button button--primary button--lg" onClick={() => window.location.href="https://discord.gg/FfYyJfgUUY"}>Get early access</button>
             </div>
             {/* <div className="col col--3">
               <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>

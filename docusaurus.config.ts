@@ -89,13 +89,20 @@ const config: Config = {
         // },
         {
           to: "/pricing",
-          position: "right",
+          position: "left",
           label: "Pricing",
         },
         {
-          to: "https://forms.gle/DyceYMGhUesCJCEJ8",
+          href: "https://discord.gg/FfYyJfgUUY",
           position: "right",
-          label: "Updates",
+          className: "header-discord-link",
+          "aria-label": "Community",
+        },
+        {
+          href: "https://github.com/backmesh/backmesh",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
