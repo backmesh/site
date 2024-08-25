@@ -99,7 +99,7 @@ const config: Config = {
           "aria-label": "Community",
         },
         {
-          href: "https://github.com/backmesh/backmesh",
+          href: "https://github.com/backmesh",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
