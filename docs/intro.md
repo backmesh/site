@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-Backmesh lets any mobile or web app (e.g. Javascript, Native Mobile, Flutter, React, React Native, etc) call LLM private key APIs without a server or cloud function backend. Additionally, Backmesh is hosted on Cloudflare’s edge, providing lower response times compared to traditional servers and cloud functions.
+Backmesh lets your mobile or web app (e.g. Javascript, Native Mobile, Flutter, React, React Native, etc) call LLM private key APIs without a server or cloud function backend. Additionally, Backmesh is hosted on Cloudflare’s edge, providing lower response times compared to traditional servers and cloud functions.
 
 ## How Backmesh works
 
