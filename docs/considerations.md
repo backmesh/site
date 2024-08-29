@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /considerations
+slug: /security
 ---
 
 # Security Considerations
@@ -20,14 +20,14 @@ For example, Firebase provides user authentication, but only properly configured
 
 ## How does Backmesh protect your LLM API Proxy
 
-Backmesh safeguards misuse of your LLM API proxy in four different ways:
+Backmesh protects your LLM API proxy in four different ways:
 
-1. Backmesh performs user authentication to ensure that requests to the proxy securing your private key API come from one of your users. This by itself does not provide authorization about which specific users are allowed to make which requests to the proxy, or how many requests a specific user can make.
+1. JWT user authentication to ensure that requests to the proxy securing your private key API come from one of your users. However, this by itself does not provide authorization about which specific users are allowed to make which requests to the proxy, or how many requests a specific user can make.
 
-2. Backmesh lets you set rate limits for each user to reasonably protect your API resources e.g. no user should be calling a given API more than X times per hour.
+2. Backmesh lets you set rate limits for each of your users e.g. no user should be calling a given API more than X times per hour. A screenshot from the dashboard:
 
 ![ratelimit](/ratelimit.png)
 
-3. Backmesh protects your LLM API proxy is by implementing resource-level access control for sensitive API resources, such as [Files](https://platform.openai.com/docs/api-reference/files) and [Threads](https://platform.openai.com/docs/api-reference/threads). This ensures that only the users who create these resources can continue to access them.
+3. Backmesh implements resource-level access control for sensitive API resources, such as [Files](https://platform.openai.com/docs/api-reference/files) and [Threads](https://platform.openai.com/docs/api-reference/threads). This ensures that only the users who create these types of resources can continue to access them.
 
-4. Backmesh has a whitelist of endpoints that it will allow from each LLM API. Endpoints such as [`/batch`](https://platform.openai.com/docs/api-reference/batch) and [`/administation`](https://platform.openai.com/docs/api-reference/administration) are not included for example. If you have a use case for an endpoint that is not whitelisted, or you would like to be able to configure this whitelist in the Backmesh dashboard please email us, message us on Discord or leave a comment in this [Github Issue](https://github.com/backmesh/backmesh/issues/1) so we can better understand and build for your use case.
+4. Backmesh has a whitelist of endpoints that it will allow for each LLM API. For example, endpoints such as [`/administration`](https://platform.openai.com/docs/api-reference/administration) in OpenAI can modify your OpenAI account and are not included in the whitelist as your app shouldn't need access. If you find that you have a use case for an endpoint that is not whitelisted in an LLM API, or you would like to be able to configure this whitelist in the Backmesh dashboard please email us, message us on Discord or leave a comment in this [Github Issue](https://github.com/backmesh/backmesh/issues/1) so we can better understand your use case and build a feature that serves your needs.

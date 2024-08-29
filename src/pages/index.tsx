@@ -29,7 +29,10 @@ export default function Home() {
               <h1 className="hero__title">{siteConfig.tagline}</h1>
               <p className="hero__subtitle">Securely call LLM APIs from your app without a backend. No SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
+              <div style={{ display: 'flex', gap: '20px', marginTop: '50px' }}>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
+              </div>
             </div>
             <div className="col col--6 padding--lg">
               <BrowserWindow>
