@@ -29,7 +29,10 @@ export default function Home() {
               <h1 className="hero__title">{siteConfig.tagline}</h1>
               <p className="hero__subtitle">Securely call LLM APIs from your app without a backend. No SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <button className="button button--primary button--lg margin-top--lg" onClick={() => window.location.href="https://discord.gg/FfYyJfgUUY"}>Get early access</button>
+              <div style={{ display: 'flex', gap: '20px', marginTop: '50px' }}>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
+              </div>
             </div>
             <div className="col col--6 padding--lg">
               <BrowserWindow>
@@ -128,7 +131,7 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages
+            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages (early beta access)
             </h1>
             <p style={{width: '100%'}} className="hero__subtitle">All LLM API calls are instrumented so you can identify usage patterns, reduce costs and improve user satisfaction within your AI applications.</p>
           </div>
@@ -149,14 +152,14 @@ export default function Home() {
             <h1 style={{width: '100%', paddingBottom: '60px'}}>Ready to get started?</h1>
           </div>
           <div className="row text--center">
-            {/* <div className="col col--3"></div> */}
-            <div className="col">
-              <button className="button button--primary button--lg" onClick={() => window.location.href="https://discord.gg/FfYyJfgUUY"}>Get early access</button>
+            <div className="col col--3"></div>
+            <div className="col col--3">
+              <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
             </div>
-            {/* <div className="col col--3">
+            <div className="col col--3">
               <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
             </div>
-            <div className="col col--3"></div> */}
+            <div className="col col--3"></div>
           </div>
         </div>
       </div>

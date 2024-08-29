@@ -7,7 +7,7 @@
 /* Example using a web font service like Google Fonts or Adobe Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
-h1, h2, h3, body {
+h1, h2, h3, a {
   font-family: 'Nunito', sans-serif;
 }
 

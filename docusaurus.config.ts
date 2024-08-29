@@ -82,15 +82,20 @@ const config: Config = {
         style: { padding: "4px" },
       },
       items: [
-        // {
-        //   to: "docs",
-        //   position: "right",
-        //   label: "Docs",
-        // },
+        {
+          to: "https://app.backmesh.com",
+          position: "left",
+          label: "Dashboard",
+        },
         {
           to: "/pricing",
           position: "left",
           label: "Pricing",
+        },
+        {
+          to: "docs",
+          position: "left",
+          label: "Docs",
         },
         {
           href: "https://discord.gg/FfYyJfgUUY",
