@@ -9,7 +9,7 @@ Backmesh lets your mobile or web app (e.g. Javascript, Native Mobile, Flutter, R
 
 ## How Backmesh works
 
-Backmesh enhances the security of LLM API access by using your authentication provider’s JWT to ensure only authorized users can make API calls. It adds additional protections like rate limiting (e.g., no more than 5 OpenAI API calls per hour per user) and encrypts your private API keys. For more details, see the [security documentation](/docs/security).
+Backmesh enhances the security of LLM API access by using your authentication provider’s JWT to ensure only authorized users can make API calls. It adds additional protections like rate limiting (e.g., no more than 5 OpenAI API calls per hour per user). For more details, see the [security documentation](/docs/security).
 
 **LLM Private Key APIs Supported:**
 
