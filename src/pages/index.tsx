@@ -27,7 +27,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Securely call LLM APIs from your app without a backend. No SDK needed.</p>
+              <p className="hero__subtitle">Securely call LLM APIs from your app without a backend using a protected proxy. No SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
               <div style={{ display: 'flex', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
