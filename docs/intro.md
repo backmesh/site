@@ -15,7 +15,7 @@ Backmesh enhances the security of LLM API access by using your authentication pr
 
 - [x] OpenAI
 - [x] Gemini
-- [ ] [Anthropic](https://github.com/backmesh/backmesh/issues/2)
+- [x] Anthropic
 
 **Authentication Providers Supported:**
 
