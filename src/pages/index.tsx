@@ -29,7 +29,7 @@ export default function Home() {
               <h1 className="hero__title">{siteConfig.tagline}</h1>
               <p className="hero__subtitle">Securely call LLM APIs from your app without a backend using a protected proxy. No SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <div style={{ display: 'flex', gap: '20px', marginTop: '50px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
               </div>
@@ -151,15 +151,9 @@ export default function Home() {
           <div className="row text--center">
             <h1 style={{width: '100%', paddingBottom: '60px'}}>Ready to get started?</h1>
           </div>
-          <div className="row text--center">
-            <div className="col col--3"></div>
-            <div className="col col--3">
-              <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
-            </div>
-            <div className="col col--3">
-              <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
-            </div>
-            <div className="col col--3"></div>
+          <div style={{ display: 'flex', gap: '20px', marginTop: '50px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
+            <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
           </div>
         </div>
       </div>
