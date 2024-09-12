@@ -4,6 +4,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Backmesh",
+  // open source Firebase for LLM APIs
+  // control panel for AI Apps
+  // open source Firebase for LLM APIs
   tagline: "The Firebase of AI apps",
   favicon: "img/favicon.ico",
 
@@ -74,6 +77,14 @@ const config: Config = {
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
+    // announcementBar: {
+    //   id: "product-hunt-banner", // Any value that will identify this message.
+    //   content:
+    //     'We are live on Product Hunt! 🎉 Check us out and support us <a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/backmesh">here</a>!',
+    //   backgroundColor: "#DA552F", // Product Hunt's brand color.
+    //   textColor: "#ffffff", // White text color for contrast.
+    //   isCloseable: true, // Defaults to `true`.
+    // },
     navbar: {
       title: "Backmesh",
       logo: {

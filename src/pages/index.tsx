@@ -27,7 +27,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Securely call LLM APIs from your app without a backend using a protected proxy. No SDK needed.</p>
+              <p className="hero__subtitle">Securely call LLM APIs from your app with analytics and rate limits per user. No backend or SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
@@ -117,7 +117,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
             <h1 style={{width: '100%', marginBottom: '60px'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is a proxy on edge CDN servers that sits between your web or mobile app and the LLM APIs.</p>
+            <p className="hero__subtitle">Backmesh is a proxy deployed close to your users that sits between your web or mobile app and the LLM APIs.</p>
           </div>
           <div className="text--center">
             <img
@@ -131,7 +131,7 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages (early beta access)
+            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages
             </h1>
             <p style={{width: '100%'}} className="hero__subtitle">All LLM API calls are instrumented so you can identify usage patterns, reduce costs and improve user satisfaction within your AI applications.</p>
           </div>

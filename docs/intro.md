@@ -23,9 +23,9 @@ Backmesh provides secure LLM API access by using your authentication provider’
 - [x] Firebase
 - [ ] [Auth0](https://github.com/backmesh/backmesh/issues/3)
 
-## LLM Analytics without SDKs (early beta access)
+## LLM Analytics without SDKs
 
-Backmesh will automatically instrument LLM requests to let you understand LLM API invocations per user e.g. error rates, token usage, costs, response times across models, etc. This feature is in early beta access as we best understand exactly what analytics you would like to see. Please leave a comment in this [Github Issue](https://github.com/backmesh/backmesh/issues/4) or message us on Discord if you would like to get access to this feature.
+Backmesh will automatically instrument LLM requests to let you understand LLM API usage across your users e.g. error rates, costs, response times across models, etc. Please leave a comment in this [Github Issue](https://github.com/backmesh/backmesh/issues/4) or message us on Discord with more information about what LLM API endpoints you are using and what analytics you would like to see.
 
 ## Tutorials
 
