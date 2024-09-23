@@ -7,7 +7,7 @@ const config: Config = {
   // open source Firebase for LLM APIs
   // control panel for AI Apps
   // open source Firebase for LLM APIs
-  tagline: "The Firebase of AI apps",
+  tagline: "Firebase for LLM APIs",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
