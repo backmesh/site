@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-Backmesh lets you securely call LLM APIs from your app with rate limits and analytics per user. No backend or SDK needed.
+Backmesh lets you securely call LLM APIs from your mobile or web app with rate limits and analytics per user. No backend or SDK needed.
 
 ## How Backmesh works
 
