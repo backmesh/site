@@ -5,11 +5,16 @@ slug: /
 
 # Introduction
 
-Backmesh lets you securely call LLM APIs from your mobile or web app with rate limits and analytics per user. No backend or SDK needed.
+With Backmesh, you can securely call LLM APIs directly from your mobile or web app using **any LLM SDK** without exposing private API keys. Replace the LLM API URL and private key in your SDK with the Backmesh URL and the authenticated user’s JWT respectively.
 
-## How Backmesh works
+## How is the LLM API protected
 
-Backmesh is throughly tested Typescript proxy backend hosted on Cloudflare Workers that lets you securely call LLM APIs from your mobile or web app using any LLM SDK. Supply the Backmesh URL and the authenticated user's JWT to the LLM SDK instead of the LLM API url and private key. Backmesh will authenticate the request and use your LLM private API key to proxy to the LLM APIs with configurable rate limits per user to prevent abuse (e.g. no more than 5 OpenAI API calls per hour per user). For more details, see the [security documentation](https://backmesh.com/docs/security).
+	•	*Authentication:* Verifies requests using the supplied JWT so only your users have access to the LLM API.
+	•	*Secure Proxying:* Uses your private LLM API key to forward calls to LLM APIs.
+	•	*Rate Limiting:* Prevents abuse with configurable, per-user rate limits (e.g., max 5 OpenAI API calls per user/hour).
+  • *Resource access control:* Sensitive API resources like [Files](https://platform.openai.com/docs/api-reference/files) and Threads are protected so only the users that create them can continue to access them.
+
+For more details, see the [security documentation](https://backmesh.com/docs/security).
 
 **LLM Private Key APIs Supported:**
 

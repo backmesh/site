@@ -36,12 +36,61 @@ export const Tooltip = ({ children, summary, details }) => {
 
 <div style={{ marginBottom: '4rem'}}>
 
-|                                                                                                                                                                            |                    Starter                     |                       Pro                        |                      Enterprise                      |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------: | :----------------------------------------------: | :--------------------------------------------------: |
-|                                                                                                                                                                            | <div style={{ fontSize: '1.2rem' }}>$8/mo</div> | <div style={{ fontSize: '1.2rem' }}>$25/mo</div> | <div style={{ fontSize: '1.2rem' }}>Contact us</div> |
-| Unlimited API proxies                                                                                                                                                      |                    &check;                     |                     &check;                      |                       &check;                        |
-| <Tooltip summary='API proxy requests' details='The sum of requests with a valid JWT, irrespective of status code, made to the API proxy throughout your billing period.'/> |                 500k included                  |           2M included, then $1 per 1M            |                      Unlimited                       |
-| <Tooltip summary='Total Users' details='The maximum number of users making requests to an API proxy.'/>                                                                    |                   Unlimited                    |                    Unlimited                     |                      Unlimited                       |
-| <Tooltip summary='MAUs' details='The sum of distinct users making requests to an API proxy throughout the billing period. Resets every billing cycle.'/>                   |                  50k included                  |        100k included, then $0.003 per MAU        |                      Unlimited                       |
+{/* Define pricing data */}
+export const pricingData = {
+  tiers: [
+    { name: 'Starter', price: '$8/mo' },
+    { name: 'Pro', price: '$25/mo' },
+    { name: 'Enterprise', price: 'Contact us' }
+  ],
+  features: [
+    {
+      name: 'Unlimited API proxies',
+      included: [true, true, true]
+    },
+    {
+      name: 'Rate limits per user',
+      tooltip: 'Prevents abuse with configurable, per-user rate limits (e.g., max 5 OpenAI API calls per user/hour).',
+      included: [true, true, true]
+    },
+    {
+      name: 'Resource access control',
+      tooltip: 'Sensitive API resources like Files and Threads are protected so only the users that create them can continue to access them.',
+      included: [true, true, true]
+    },
+    {
+      name: 'API proxy requests',
+      tooltip: 'The sum of requests with a valid JWT, irrespective of status code, made to the API proxy throughout your billing period.',
+      values: ['500k included', '2M included, then $1 per 1M', 'Unlimited']
+    },
+    {
+      name: 'Total Users',
+      tooltip: 'The maximum number of users making requests to an API proxy.',
+      values: ['Unlimited', 'Unlimited', 'Unlimited']
+    },
+    {
+      name: 'MAUs',
+      tooltip: 'The sum of distinct users making requests to an API proxy throughout the billing period. Resets every billing cycle.',
+      values: ['50k included', '100k included, then $0.003 per MAU', 'Unlimited']
+    }
+  ]
+};
 
+{/* Render pricing table */}
+<div style={{ marginBottom: '4rem'}}>
+| | {pricingData.tiers.map(tier => `${tier.name}`).join(' | ')} |
+|:--|${pricingData.tiers.map(() => ':--:').join('|')}|
+| | {pricingData.tiers.map(tier =>
+  `<div style={{ fontSize: '1.2rem' }}>${tier.price}</div>`
+).join(' | ')} |
+{pricingData.features.map(feature => `
+| ${feature.tooltip ?
+    `<Tooltip summary='${feature.name}' details='${feature.tooltip}'/>` :
+    feature.name
+  } | ${
+    feature.included ?
+      feature.included.map(inc => inc ? '&check;' : '').join(' | ') :
+      feature.values.join(' | ')
+  } |`
+).join('\n')}
 </div>
