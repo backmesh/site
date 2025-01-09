@@ -56,11 +56,11 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Only your users have access</h3>
+                  <h3>Authenticated proxy</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                  Proxied requests are verified using <a href="https://firebase.google.com/docs/auth/admin/verify-id-tokens">JWTs</a> from you app's authentication provider.
+                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the LLM API via the Backmesh proxy.
                   </p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function Home() {
                 </div>
                 <div className="card__body padding-vert-md">
                   <p>
-                    Request limits per user are enforced over configurable time windows, e.g. no one user should be calling an LLM API more than 5 times per hour
+                    Configurable per-user rate limits to prevent abuse (e.g. no more than 5 OpenAI API calls per user per hour).
                   </p>
                 </div>
               </div>

@@ -31,14 +31,14 @@ export const Tooltip = ({ children, summary, details }) => {
 
 <h1 style={{ textAlign: "center" }}>Simple, predictable pricing</h1>
 <p style={{ textAlign: "center", marginBottom: "4rem", fontSize: "1.3rem" }}>
-  Start building for free, then pay when you scale based on requests and MAUs
+  Start building affordably, then pay when you scale based on requests and MAUs
 </p>
 
-<div style={{ marginBottom: '4rem'}}>
+<div style={{ marginBottom: '4rem'}}></div>
 
-{/* Define pricing data */}
+{/* Pricing Data */}
 export const pricingData = {
-  tiers: [
+  plans: [
     { name: 'Starter', price: '$8/mo' },
     { name: 'Pro', price: '$25/mo' },
     { name: 'Enterprise', price: 'Contact us' }
@@ -46,20 +46,20 @@ export const pricingData = {
   features: [
     {
       name: 'Unlimited API proxies',
-      included: [true, true, true]
+      values: ['✓', '✓', '✓']
     },
     {
-      name: 'Rate limits per user',
-      tooltip: 'Prevents abuse with configurable, per-user rate limits (e.g., max 5 OpenAI API calls per user/hour).',
-      included: [true, true, true]
+      name: 'Configurable rate limits per user',
+      tooltip: 'Prevents abuse with configurable, per-user rate limits (e.g. max 5 OpenAI API calls per user per hour).',
+      values: ['✓', '✓', '✓']
     },
-    {
+        {
       name: 'Resource access control',
       tooltip: 'Sensitive API resources like Files and Threads are protected so only the users that create them can continue to access them.',
-      included: [true, true, true]
+      values: ['✓', '✓', '✓']
     },
     {
-      name: 'API proxy requests',
+      name: 'Request Limits',
       tooltip: 'The sum of requests with a valid JWT, irrespective of status code, made to the API proxy throughout your billing period.',
       values: ['500k included', '2M included, then $1 per 1M', 'Unlimited']
     },
@@ -74,23 +74,39 @@ export const pricingData = {
       values: ['50k included', '100k included, then $0.003 per MAU', 'Unlimited']
     }
   ]
-};
+}
 
-{/* Render pricing table */}
-<div style={{ marginBottom: '4rem'}}>
-| | {pricingData.tiers.map(tier => `${tier.name}`).join(' | ')} |
-|:--|${pricingData.tiers.map(() => ':--:').join('|')}|
-| | {pricingData.tiers.map(tier =>
-  `<div style={{ fontSize: '1.2rem' }}>${tier.price}</div>`
-).join(' | ')} |
-{pricingData.features.map(feature => `
-| ${feature.tooltip ?
-    `<Tooltip summary='${feature.name}' details='${feature.tooltip}'/>` :
-    feature.name
-  } | ${
-    feature.included ?
-      feature.included.map(inc => inc ? '&check;' : '').join(' | ') :
-      feature.values.join(' | ')
-  } |`
-).join('\n')}
+<div style={{ marginBottom: '4rem' }}>
+  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <tr style={{ border: 'none' }}>
+      <td style={{ border: 'none' }}></td>
+      {pricingData.plans.map(plan => (
+        <td key={plan.name} style={{ textAlign: 'center', border: 'none', fontWeight: 'bold' }}>
+          {plan.name}
+        </td>
+      ))}
+    </tr>
+    <tr>
+      <td style={{ borderTop: 'none' }}></td>
+      {pricingData.plans.map(plan => (
+        <td key={plan.name} style={{ textAlign: 'center', borderTop: 'none' }}>
+          {plan.price}
+        </td>
+      ))}
+    </tr>
+    {pricingData.features.map(feature => (
+      <tr key={feature.name}>
+        <td>
+          {feature.tooltip ? (
+            <Tooltip summary={feature.name} details={feature.tooltip} />
+          ) : (
+            feature.name
+          )}
+        </td>
+        {feature.values.map((value, index) => (
+          <td key={index} style={{ textAlign: 'center' }}>{value}</td>
+        ))}
+      </tr>
+    ))}
+  </table>
 </div>
