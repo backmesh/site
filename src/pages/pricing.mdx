@@ -31,17 +31,82 @@ export const Tooltip = ({ children, summary, details }) => {
 
 <h1 style={{ textAlign: "center" }}>Simple, predictable pricing</h1>
 <p style={{ textAlign: "center", marginBottom: "4rem", fontSize: "1.3rem" }}>
-  Start building for free, then pay when you scale based on requests and MAUs
+  Start building affordably, then pay when you scale based on requests and MAUs
 </p>
 
-<div style={{ marginBottom: '4rem'}}>
+<div style={{ marginBottom: '4rem'}}></div>
 
-|                                                                                                                                                                            |                    Starter                     |                       Pro                        |                      Enterprise                      |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------: | :----------------------------------------------: | :--------------------------------------------------: |
-|                                                                                                                                                                            | <div style={{ fontSize: '1.2rem' }}>Free</div> | <div style={{ fontSize: '1.2rem' }}>$25/mo</div> | <div style={{ fontSize: '1.2rem' }}>Contact us</div> |
-| Unlimited API proxies                                                                                                                                                      |                    &check;                     |                     &check;                      |                       &check;                        |
-| <Tooltip summary='API proxy requests' details='The sum of requests with a valid JWT, irrespective of status code, made to the API proxy throughout your billing period.'/> |                 500k included                  |           2M included, then $1 per 1M            |                      Unlimited                       |
-| <Tooltip summary='Total Users' details='The maximum number of users making requests to an API proxy.'/>                                                                    |                   Unlimited                    |                    Unlimited                     |                      Unlimited                       |
-| <Tooltip summary='MAUs' details='The sum of distinct users making requests to an API proxy throughout the billing period. Resets every billing cycle.'/>                   |                  50k included                  |        100k included, then $0.003 per MAU        |                      Unlimited                       |
+{/* Pricing Data */}
+export const pricingData = {
+  plans: [
+    { name: 'Starter', price: '$8/mo' },
+    { name: 'Pro', price: '$25/mo' },
+    { name: 'Enterprise', price: 'Contact us' }
+  ],
+  features: [
+    {
+      name: 'Unlimited API proxies',
+      values: ['✓', '✓', '✓']
+    },
+    {
+      name: 'Configurable rate limits per user',
+      tooltip: 'Prevents abuse with configurable, per-user rate limits (e.g. max 5 OpenAI API calls per user per hour).',
+      values: ['✓', '✓', '✓']
+    },
+        {
+      name: 'Resource access control',
+      tooltip: 'Sensitive API resources like Files and Threads are protected so only the users that create them can continue to access them.',
+      values: ['✓', '✓', '✓']
+    },
+    {
+      name: 'Request Limits',
+      tooltip: 'The sum of requests with a valid JWT, irrespective of status code, made to the API proxy throughout your billing period.',
+      values: ['500k included', '2M included, then $1 per 1M', 'Unlimited']
+    },
+    {
+      name: 'Total Users',
+      tooltip: 'The maximum number of users making requests to an API proxy.',
+      values: ['Unlimited', 'Unlimited', 'Unlimited']
+    },
+    {
+      name: 'MAUs',
+      tooltip: 'The sum of distinct users making requests to an API proxy throughout the billing period. Resets every billing cycle.',
+      values: ['50k included', '100k included, then $0.003 per MAU', 'Unlimited']
+    }
+  ]
+}
 
+<div style={{ marginBottom: '4rem' }}>
+  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <tr style={{ border: 'none' }}>
+      <td style={{ border: 'none' }}></td>
+      {pricingData.plans.map(plan => (
+        <td key={plan.name} style={{ textAlign: 'center', border: 'none', fontWeight: 'bold' }}>
+          {plan.name}
+        </td>
+      ))}
+    </tr>
+    <tr>
+      <td style={{ borderTop: 'none' }}></td>
+      {pricingData.plans.map(plan => (
+        <td key={plan.name} style={{ textAlign: 'center', borderTop: 'none' }}>
+          {plan.price}
+        </td>
+      ))}
+    </tr>
+    {pricingData.features.map(feature => (
+      <tr key={feature.name}>
+        <td>
+          {feature.tooltip ? (
+            <Tooltip summary={feature.name} details={feature.tooltip} />
+          ) : (
+            feature.name
+          )}
+        </td>
+        {feature.values.map((value, index) => (
+          <td key={index} style={{ textAlign: 'center' }}>{value}</td>
+        ))}
+      </tr>
+    ))}
+  </table>
 </div>

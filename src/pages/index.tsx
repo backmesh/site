@@ -27,7 +27,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Securely call LLM APIs from your app with analytics and rate limits per user. No backend or SDK needed.</p>
+              <p className="hero__subtitle">Securely call LLM APIs from your mobile or web app with analytics and rate limits per user. No backend or SDK needed.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Get started</button>
@@ -56,11 +56,11 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Only your users have access</h3>
+                  <h3>Authenticated proxy</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                  Proxied requests are verified using <a href="https://firebase.google.com/docs/auth/admin/verify-id-tokens">JWTs</a> from you app's authentication provider.
+                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the LLM API via the Backmesh proxy.
                   </p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function Home() {
                 </div>
                 <div className="card__body padding-vert-md">
                   <p>
-                    Request limits per user are enforced over configurable time windows, e.g. no one user should be calling an LLM API more than 5 times per hour
+                    Configurable per-user rate limits to prevent abuse (e.g. no more than 5 OpenAI API calls per user per hour).
                   </p>
                 </div>
               </div>
