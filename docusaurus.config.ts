@@ -37,7 +37,13 @@ const config: Config = {
           routeBasePath: "/docs",
           exclude: [],
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          routeBasePath: '/blog',
+          exclude: ['unlisted/*'],
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+        },
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -94,7 +100,7 @@ const config: Config = {
       },
       items: [
         {
-          to: "https://app.backmesh.com",
+          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
           position: "left",
           label: "Dashboard",
         },
@@ -107,6 +113,11 @@ const config: Config = {
           to: "docs",
           position: "left",
           label: "Docs",
+        },
+        {
+          to: "blog",
+          position: "left",
+          label: "Blog",
         },
         {
           href: "https://discord.gg/FfYyJfgUUY",
