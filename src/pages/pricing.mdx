@@ -31,7 +31,7 @@ export const Tooltip = ({ children, summary, details }) => {
 
 <h1 style={{ textAlign: "center" }}>Simple, predictable pricing</h1>
 <p style={{ textAlign: "center", marginBottom: "4rem", fontSize: "1.3rem" }}>
-  Start building affordably, then pay when you scale based on requests and MAUs
+  Start building for free with our <b>30 day</b> trial, then pay proportionally to requests and MAUs. We are open source so self hosting is always an option.
 </p>
 
 <div style={{ marginBottom: '4rem'}}></div>
@@ -39,8 +39,8 @@ export const Tooltip = ({ children, summary, details }) => {
 {/* Pricing Data */}
 export const pricingData = {
   plans: [
-    { name: 'Starter', price: '$8/mo' },
-    { name: 'Pro', price: '$25/mo' },
+    { name: 'Starter', price: '$10/mo' },
+    { name: 'Pro', price: 'Contact us' },
     { name: 'Enterprise', price: 'Contact us' }
   ],
   features: [
@@ -109,4 +109,8 @@ export const pricingData = {
       </tr>
     ))}
   </table>
+</div>
+
+<div style={{ textAlign: 'center', marginTop: '80px' }}>
+  <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
 </div>
