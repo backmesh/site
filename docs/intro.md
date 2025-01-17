@@ -30,7 +30,7 @@ Leave a comment on Discord if your provider or API is not supported.
 
 ## LLM Analytics without SDKs
 
-Backmesh will automatically instrument LLM requests to let you understand LLM API usage across your users e.g. error rates, costs, response times across models, etc. Please leave a comment on Discord with more information about what LLM API endpoints you are using and what analytics you would like to see.
+Backmesh will automatically instrument LLM requests to let you understand LLM API usage across your users e.g. error rates, costs, response times across models, etc. Please leave a comment on [Discord](https://discord.backmesh.com) with more information about what LLM API endpoints you are using and what analytics you would like to see.
 
 ## Hosting
 

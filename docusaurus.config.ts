@@ -120,7 +120,7 @@ const config: Config = {
           label: "Blog",
         },
         {
-          href: "https://discord.gg/FfYyJfgUUY",
+          href: "https://discord.backmesh.com",
           position: "right",
           className: "header-discord-link",
           "aria-label": "Community",
