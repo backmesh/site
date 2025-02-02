@@ -1,19 +1,22 @@
 ---
 slug: openai-api-safe
-title: Safely handle the OpenAI AI API key for use in web and mobile apps
+title: OpenAI API key safety and mistakes in client-side code
+# Safe use and common mistakes of the OpenAI API key in client apps
+# 3 security mistakes when using the OpenAI API with apps
 # Safely call the OpenAI AI API from web and mobile apps
-date: 2025-01-31
+# Common pitfalls when using the OpenAI API usage in/with apps
+date: 2025-02-03
 tags: [guides]
 authors: depombo
 ---
 
-A key concern when building a web or mobile application that uses OpenAI’s language models is protecting your private API key. But if you’re a beginning developer or an experienced developer wanting to build an MVP quickly, setting up a full-fledged backend just to safely handle an API key can feel like a drag. In this article, you’ll learn how keep your OpenAI API key safe while keeping your code and infrastructure as simple as possible.
+A key concern when building a web or mobile application that uses OpenAI’s language models is protecting your private API key. But if you’re wanting to keep complexity low and build quickly, setting up a full-fledged backend just to safely handle an API key can feel like a drag. In this article, you’ll learn how to avoid the most common mistakes when integrating the OpenAI API with a client-side app while keeping things as simple as possible.
 
-## Why You Can’t Store Your OpenAI Key on the Front End
+## Mistake # 1: Store the OpenAI Key in the frontend
 
 Putting your API key directly in client-side code (HTML, JavaScript, or mobile apps) is very risky.
 
-```typescript title="client/openai.ts"
+```javascript title="client/openai.ts"
 import OpenAI from "openai";
 
 const client = new OpenAI({
@@ -24,50 +27,112 @@ const client = new OpenAI({
 const completion = await OpenAI.instance.chat(...)
 ```
 
-Anyone can inspect your code (even if it is minified), extract your key, and abuse it. This misuse can:
+Anyone can inspect your code (even if it is minified or obfuscated somehow), extract your key, and abuse it. This misuse can:
 	•	Lead to unexpected costs on your OpenAI account
 	•	Violate OpenAI’s Acceptable Use Policy and Terms of Service
 	•	Potentially expose your project to spam or abusive behavior
 
-Hence, you need a layer of protection that keeps the secret key away from the end user’s browser or device.
+Don't let [this](https://community.openai.com/t/repeated-fraudulent-use-of-my-api-keys/510465/3) happen to you. The OpenAI SDK requires the `dangerouslyAllowBrowser` flag to try to prevent this problem. Hence, you need a layer of protection that keeps the secret key away from the end user’s browser or device.
 
-## Why You Can't Call the OpenAI API from the Front End through an unauthenticated proxy
+## Mistake # 2: Call the OpenAI API from the client through an unauthenticated proxy
 
-Putting your OpenAI API key as a secret in a hosted server or cloud function and calling it is better than exposing it in your backend directly, but it is still unsafe. Let's take the following cloud function
+Putting your OpenAI API key as a secret in a hosted server or cloud function and calling that endpoint from your client is much better than exposing it directly, but it is still unsafe. Let's take the following client-side application code
 
-```js title="openai.ts"
+```js title="client/openai.ts"
 
 const completion = await fetch("https://functionroute.yourcloud.com/chat", {
-	method: 'POST',
-	headers: {
-		'Content-Type': 'application/json',
-	},
-	...,
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  ...,
 });
 
 ```
 
-
-Let's take the following cloud function snippet
+Coupled with the corresponding cloud function
 
 ```typescript title="cloud/function.ts"
 import OpenAI from "openai";
+import route from "yourcloud";
 
 const client = new OpenAI({
   apiKey: env.OPENAI_SECRET_KEY,
 });
 
+route.get('chat', req, res => {
+  const completion = await OpenAI.instance.chat(...)
+  return res.send(completion);
+})
+
 ```
 
+Notice that anyone can inspect your client code and realize that they can (ab)use the exposed endpoint directly at `https://functionroute.yourcloud.com/chat`.
+
+## Mistake # 3: Call the OpenAI API Key from the client through an authenticated proxy with generic permissions
+
+Putting your OpenAI API key as a secret in a hosted server or cloud function and adding authentication so only your users can call the proxy endpoint is quite common and still much better. However, it is *still* unsafe. Let's take the following cloud function
+
+```js title="client/openai.ts"
+import supabase from "supabase-js";
+
+const jwt = supabase.auth.session().access_token;
+
+const completion = await fetch("https://functionroute.yourcloud.com/chat", {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+		'Authentication': `Bearer ${jwt}`
+  },
+  ...,
+});
+
+```
+
+Coupled with the following cloud function snippet
+
+```typescript title="cloud/function.ts"
+import OpenAI from "openai";
+import route from "yourcloud";
+import { createRemoteJWKSet, jwtVerify } from 'jose'
+
+const JWKS = createRemoteJWKSet(new URL('https://<YOUR-PROJECT-REF>.supabase.co/auth/v1/.well-known/jwks.json'))
+
+const client = new OpenAI({
+  apiKey: env.OPENAI_SECRET_KEY,
+});
+
+route.get('chat', req, res => {
+	const authHeader = req.headers['authorization'];
+  try {
+    // 1. Get the token from the Authorization header
+    const authHeader = req.headers['authorization'] || ''
+    const jwt = authHeader.split(' ')[1] // Bearer <token>
+
+    if (!jwt) {
+      return res.status(401).json({ error: 'No token provided' })
+    }
+
+    // 2. Verify the token using the JWKS
+    const { payload } = await jwtVerify(token, JWKS)
+
+    // 3. The token is valid
+		const completion = await OpenAI.instance.chat(...)
+  	return res.send(completion);
+
+  } catch (error) {
+    console.error(error)
+    return res.status(401).json({ error: 'Invalid token' })
+  }
+})
+
+```
+
+This code looks fine. The problem here is that JWT or authentication tokens typically expire every hour. That means that someone can generate a JWT from your client-side code, use it to misuse API until expires and then rinse and repeat.
+
+## Building proper permissions, usage per user and authentication into your backend
 
 
-
-The exposed endpoint 
-
-## Why You Can’t Call the OpenAI API Key from the Front End through an authenticated proxy with generic permissions
-
-
-## Building proper permissions and authentication into your backend
 
 
 ## Use a Backend-as-a-Service (BaaS) Platform to abstract this complexity

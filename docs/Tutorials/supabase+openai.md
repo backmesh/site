@@ -42,6 +42,7 @@ Now you are ready to make API calls in Javascript through the Backmesh proxy URL
 
 ```js title="openai.js"
 import OpenAI from "openai";
+import supabase from "supabase-js";
 
 const BACKMESH_PROXY_URL =
   "https://edge.backmesh.com/v1/proxy/gbBbHCDBxqb8zwMk6dCio63jhOP2/wjlwRswvSXp4FBXwYLZ1/v1";
