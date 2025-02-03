@@ -157,7 +157,14 @@ const opair = await fetch("https://functionroute.yourcloud.com/v1/files", {
 
 ## Building a safe integration from your client-side app with the OpenAI API
 
-Establishing robust permissions, user-specific usage tracking, and authentication layers in your backend is crucial for both security and scalability. By enforcing clear access controls—ensuring that only the user who created a resource in the OpenAI API can modify or retrieve it—you prevent unauthorized tampering or data breaches. Proper authentication mechanisms, such as token-based systems, safeguard costly operations and sensitive endpoints from potential misuse. In addition, implementing rate limiting helps defend against abusive behavior of your OpenAI account. By combining strict permissions, user-specific policies, and rate limiting, you create a reliable, secure environment that can gracefully handle growing traffic and maintain user trust.
+- Implement Robust Authentication
+Require valid credentials (e.g., token-based auth) so you know exactly who’s accessing your services.
+- Track Usage per User
+Monitor individual user actions to quickly spot unusual patterns and prevent abuse.
+- Enforce Secure Permissions
+Ensure only the user who created a resource can view or modify it to protect against unauthorized access or data leaks.
+-	Scale with Rate Limiting
+Control the flow of requests to prevent misuse that could rack up your bill, helping you avoid unexpected charges.
 
 ## Use a Backend-as-a-Service (BaaS) Platform to abstract this complexity
 
