@@ -178,8 +178,8 @@ Implementing proper integration with the OpenAI API in a backend can be time-con
     Store environment variables (like your OpenAI key) in a protected configuration that users cannot see.
 	2.	Process Requests with permissions, rate limiting and authentication
     -	Your front end sends a request to this BaaS endpoint on behalf of your user.
-    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits (e.g. 5 requests per min) and the user is not requesting resources it did not previously create. Onlt then does the BaaS attach your secret API key from the secure store.
-    - The request goes to OpenAI, then returns the AI-generated response to your front end.
+    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits (e.g. 5 requests per min) and the user is not requesting resources it did not previously create. Only if all of this is true, the BaaS attaches your secret API key from the secure store to the request.
+    - The request goes to OpenAI, then the backend returns the OpenAI API response to your front end with streaming support.
 
 The resulting client-side code is described below and is taken from one of our [tutorials](/docs/supabase):
 
