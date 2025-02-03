@@ -17,7 +17,7 @@ A key concern when building a web or mobile application that uses OpenAI’s lan
 
 ## Mistake # 1: Storing the OpenAI Key in Frontend Code
 
-Putting your API key directly in client-side code (using any type of web or mobile framework) as shown in the sample frontend code below is simple, but also very risky.
+Putting your API key directly in client-side code (using any type of web or mobile framework) as shown in the sample frontend code below is tempting, but also very risky.
 
 ```javascript title="client/openai.ts"
 import OpenAI from "openai";
@@ -70,11 +70,11 @@ route.get('/', req, res => {
 
 ```
 
-Since this proxy is publicly accessible, an attacker could bypass your app and spam OpenAI directly at `https://functionroute.yourcloud.com/`.
+Since this proxy is publicly accessible, an attacker could bypass your app and acess the OpenAI API with your private key directly at `https://functionroute.yourcloud.com/`.
 
 ## Mistake # 3: Using an Authenticated Proxy without Permissions
 
-Putting your OpenAI API key as a secret in a hosted server or cloud function and adding authentication so only your users can call the proxy endpoint is quite common and still much better than the previous two flawed setups. However, it is *still* unsafe. Let's take the following frontend code:
+Putting your OpenAI API key as a secret in a hosted server or cloud function and adding authentication so only your users can call the proxy endpoint is quite common and still much better than the setups laid out in the previous two mistakes. However, it is *still* unsafe. Let's take the following frontend code:
 
 ```javascript title="client/openai.ts"
 import supabase from "supabase-js";
@@ -136,8 +136,8 @@ route.get('/', req, res => {
 
 This LLM API implementation for a client-side app looks fine at first glance and provides some safety. However, there are two problems with it:
 
-1. There are no limits to how many times a given user can call the OpenAI API proxy. Any user can call this API proxy up to the account [rate limits](https://platform.openai.com/docs/guides/rate-limits) of the Open AI API associated with the secret key stored in the server by simply getting their JWT and calling the proxy at `https://functionroute.yourcloud.com/v1/`. The JWTs, or authentication tokens, typically expire within an hour. That means that someone can generate a token from your client-side code and (mis)use it until it expires. Then rinse and repeat.
-2. OpenAI, and other LLM APIs, have endpoints that allow uploading [files](https://platform.openai.com/docs/api-reference/files) to be analyzed and chat histories within [threads](https://platform.openai.com/docs/api-reference/threads). The proxy layed out above does not provide any permissions or access control over which users uploaded or created which private resources. This means that any user with just their JWT can exploit this security vulnerability and see all the files and conversations ever created with that OpenAI API key. This will cause infringements on the data and privacy of your users. The following frontend code below will call this OpenAI API [endpoint](https://platform.openai.com/docs/api-reference/files/list) which will return all the files uploaded across all your users.
+1. There are no limits to how many times a given user can call the OpenAI API proxy. Any user can call this API proxy up to the default account [rate limits](https://platform.openai.com/docs/guides/rate-limits) for the Open AI API associated with the private API key stored in the backend by simply getting their JWT and calling the proxy at `https://functionroute.yourcloud.com/v1/`. The JWTs, or authentication tokens, typically expire within an hour. That means that someone can generate a token from your client-side code and (mis)use it until it expires. Then rinse and repeat.
+2. OpenAI, and other LLM APIs, have endpoints that allow uploading [files](https://platform.openai.com/docs/api-reference/files) for augmented analysis and creating [threads](https://platform.openai.com/docs/api-reference/threads) with chat history for autonomous assistatns. The proxy layed out above does not provide any permissions or access control over which users uploaded or created which private resources. This means that any user with just their JWT can exploit this security vulnerability and see all the files and conversations ever created with the backend's OpenAI API key. This will cause infringements on the data and privacy of end users. The following frontend code will call the OpenAI API [list files](https://platform.openai.com/docs/api-reference/files/list) end point which will return all the files ever uploaded regardless of the user that uploaded it:
 
 ```javascript title="vulnerability.ts"
 import supabase from "supabase-js";
@@ -158,16 +158,22 @@ const opair = await fetch("https://functionroute.yourcloud.com/v1/files", {
 ## Building a safe integration
 
 To prevent these vulnerabilities, you should implement the following safeguards in your backend:
-- Implement Robust Authentication
+
+### Implement Authentication
+
 Require valid credentials (e.g., token-based auth) so you know exactly who’s accessing your services.
-- Track Usage and Limits per User
+
+### Track Usage and Limits per User
+
 Prevent users from racking up high API costs by restricting the number of requests per minute per user.
-- Enforce Secure Permissions
+
+### Enforce Secure Permissions
+
 Ensure only the user who created a resource can view or modify it to protect against unauthorized access or data leaks.
 
 ## Use a Backend-as-a-Service (BaaS) Platform
 
-Implementing rate limits and permissions in a backend can be time-consuming. A Backend-as-a-Service (BaaS) like Backmesh abstracts this complexity, handling key security, authentication, and request validation for you—without requiring you to build or maintain a backend as a secure middleman between your front end and OpenAI API. The idea is straightforward:
+Implementing proper integration with the OpenAI API in a backend can be time-consuming. A Backend-as-a-Service (BaaS) like Backmesh abstracts this complexity handling authentication, rate limits and permission enforcement for you—without requiring you to build or maintain a backend. The idea is straightforward:
   1.	Store your private OpenAI API key securely
     Store environment variables (like your OpenAI key) in a protected configuration that users cannot see.
 	2.	Process Requests with permissions, rate limiting and authentication
@@ -193,4 +199,4 @@ const client = new OpenAI({
 });
 ```
 
-From your perspective, there’s “no backend” to manage—no servers, no DevOps, no complicated configurations. But under the hood, Backmesh handles all the server details, authentication and permissioning for you. Read more about Backmesh's security considerations [here](/docs/security) or check our the open source code on [Github](https://github.com/backmesh/backmesh).
+From your perspective, there’s “no backend” to manage—no servers, no DevOps, no complicated configurations. But under the hood, Backmesh is a secure middleman between your front end and OpenAI API. Read more about Backmesh's security considerations [here](/docs/security) or check our the open source code on [Github](https://github.com/backmesh/backmesh).
