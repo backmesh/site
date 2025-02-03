@@ -15,7 +15,7 @@ A key concern when building a web or mobile application that uses OpenAI’s lan
  - Violate OpenAI’s Acceptable Use Policy and Terms of Service
  - Potentially expose your project to spam or abusive behavior
 
-## Mistake # 1: Store the OpenAI Key in the frontend
+## Mistake # 1: Storing the OpenAI Key in Frontend Code
 
 Putting your API key directly in client-side code (using any type of web or mobile framework) as shown in the sample frontend code below is simple, but also very risky.
 
@@ -34,7 +34,7 @@ const completion = await OpenAI.instance.chat(...)
 
 Anyone can inspect your code (even if it is minified or obfuscated somehow), extract your key, and abuse it. Don't let [this](https://community.openai.com/t/repeated-fraudulent-use-of-my-api-keys/510465/3) happen to you. The OpenAI SDK requires the `dangerouslyAllowBrowser` flag to try to prevent this problem and make sure you add a layer of protection that keeps the secret key away from the end user’s browser or device.
 
-## Mistake # 2: Call the OpenAI API client-side through an unauthenticated proxy
+## Mistake # 2: Using an Unauthenticated Proxy
 
 Putting your OpenAI API key as a secret in a hosted server or cloud function and calling that endpoint from your client is much better than exposing it directly, but it is still unsafe. Let's take the following client-side application code:
 
@@ -70,9 +70,9 @@ route.get('/', req, res => {
 
 ```
 
-Per Mistake # 1, we know that anyone can inspect your client-side code and (ab)use the exposed OpenAI proxy endpoint directly at `https://functionroute.yourcloud.com/`.
+Since this proxy is publicly accessible, an attacker could bypass your app and spam OpenAI directly at `https://functionroute.yourcloud.com/`.
 
-## Mistake # 3: Call the OpenAI API client-side through an authenticated proxy with generic permissions
+## Mistake # 3: Using an Authenticated Proxy without Permissions
 
 Putting your OpenAI API key as a secret in a hosted server or cloud function and adding authentication so only your users can call the proxy endpoint is quite common and still much better than the previous two flawed setups. However, it is *still* unsafe. Let's take the following frontend code:
 
@@ -155,25 +155,24 @@ const opair = await fetch("https://functionroute.yourcloud.com/v1/files", {
 
 ```
 
-## Building a safe integration from your client-side app with the OpenAI API
+## Building a safe integration
 
+To prevent these vulnerabilities, you should implement the following safeguards in your backend:
 - Implement Robust Authentication
 Require valid credentials (e.g., token-based auth) so you know exactly who’s accessing your services.
-- Track Usage per User
-Monitor individual user actions to quickly spot unusual patterns and prevent abuse.
+- Track Usage and Limits per User
+Prevent users from racking up high API costs by restricting the number of requests per minute per user.
 - Enforce Secure Permissions
 Ensure only the user who created a resource can view or modify it to protect against unauthorized access or data leaks.
--	Scale with Rate Limiting
-Control the flow of requests to prevent misuse that could rack up your bill, helping you avoid unexpected charges.
 
 ## Use a Backend-as-a-Service (BaaS) Platform to abstract this complexity
 
-If you don’t want to manage a backend with proper authentication and permissions, a Backend-as-a-Service (BaaS) platform such as Backmesh can act as a secure middleman between your front end and OpenAI. The idea is straightforward:
-  1.	Store Your Key Securely
+Manually securing API keys and implementing permissions can be time-consuming. A Backend-as-a-Service (BaaS) like Backmesh abstracts this complexity, handling key security, authentication, and request validation for you—without requiring you to build or maintain a backend as a secure middleman between your front end and OpenAI API. The idea is straightforward:
+  1.	Store your private OpenAI API key securely
     Store environment variables (like your OpenAI key) in a protected configuration that users cannot see.
 	2.	Process Requests with permissions, rate limiting and authentication
     -	Your front end sends a request to this BaaS endpoint on behalf of your user.
-    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits and the user is not requesting resources it did not previously create. Onlt then does the BaaS attach your secret API key from the secure store.
+    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits (e.g. 5 requests per min) and the user is not requesting resources it did not previously create. Onlt then does the BaaS attach your secret API key from the secure store.
     - The request goes to OpenAI, then returns the AI-generated response to your front end.
 
 From your perspective, there’s “no backend” to manage—no servers, no DevOps, no complicated configurations. But under the hood, the BaaS handles all the server details, authentication and permissioning for you. Read more about Backmesh's security considerations [here](/docs/security).
