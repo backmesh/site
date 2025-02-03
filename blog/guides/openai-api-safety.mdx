@@ -174,12 +174,11 @@ Ensure only the user who created a resource can view or modify it to protect aga
 ## Use a Backend-as-a-Service (BaaS) Platform
 
 Implementing proper integration with the OpenAI API in a backend can be time-consuming. A Backend-as-a-Service (BaaS) like Backmesh abstracts this complexity handling authentication, rate limits and permission enforcement for you—without requiring you to build or maintain a backend. The idea is straightforward:
-  1.	Store your private OpenAI API key securely
-    Store environment variables (like your OpenAI key) in a protected configuration that users cannot see.
+  1.	Store your private OpenAI API key securely in a protected configuration that users cannot see.
 	2.	Process Requests with permissions, rate limiting and authentication
-    -	Your front end sends a request to this BaaS endpoint on behalf of your user.
-    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits (e.g. 5 requests per min) and the user is not requesting resources it did not previously create. Only if all of this is true, the BaaS attaches your secret API key from the secure store to the request.
-    - The request goes to OpenAI, then the backend returns the OpenAI API response to your front end with streaming support.
+    -	Your front end sends a request to the Backmesh endpoint on behalf of your user.
+    - The endpoint verifies this request belongs to one of your users, the user hasn't gone past their limits (e.g. 5 requests per min) and the user is not requesting resources it did not previously create. Only if all of this is true, Backmesh attaches your secret API key from the secure store to the request.
+    - The request goes to OpenAI, then Backmesh returns the OpenAI API response to your front end with streaming support.
 
 The resulting client-side code is described below and is taken from one of our [tutorials](/docs/supabase):
 
