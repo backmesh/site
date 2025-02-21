@@ -80,7 +80,7 @@ export default function SupabaseJWT() {
               <p>
                 This tool runs entirely in your browser - no data is transmitted to our servers.
                 The source code is available on{' '}
-                <a href="https://github.com/backmesh/backmesh/blob/main/site/src/pages/supabase-jwt.tsx"
+                <a href="https://github.com/backmesh/site/blob/main/src/pages/supabase-jwt.tsx"
                    target="_blank"
                    rel="noopener noreferrer">
                   GitHub
