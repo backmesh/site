@@ -34,7 +34,7 @@ Backmesh will automatically instrument LLM requests to let you understand LLM AP
 
 ## Hosting
 
-Backmesh is open source and can be [self hosted](/docs/selfhost) in your own Cloudflare account which includes a generous free tier. We also offer a hosted [SaaS](https://app.backmesh.com) with [pricing plans](https://backmesh.com/pricing/) starting at $10 per month. LLM API analytics are displayed in the SaaS dashboard only.
+Backmesh is open source and can be [self hosted](/docs/selfhost) in your own Cloudflare account which includes a generous free tier. We also offer a hosted [SaaS](https://app.backmesh.com) with different[pricing plans](https://backmesh.com/pricing/). LLM API analytics are displayed in the SaaS dashboard only.
 
 ## Tutorials
 
