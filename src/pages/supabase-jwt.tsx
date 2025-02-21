@@ -21,9 +21,10 @@ function decodeJwt(token: string) {
   }
 }
 
-export default function FirebaseJWT() {
+export default function SupabaseJWT() {
   const { siteConfig } = useDocusaurusContext();
   const [apiKey, setApiKey] = useState('');
+  const [projectUrl, setProjectUrl] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [jwt, setJwt] = useState('');
@@ -37,16 +38,16 @@ export default function FirebaseJWT() {
 
     try {
       const response = await fetch(
-        `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`,
+        `${projectUrl}/auth/v1/token?grant_type=password`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'apikey': apiKey,
           },
           body: JSON.stringify({
             email,
             password,
-            returnSecureToken: true,
           }),
         }
       );
@@ -54,9 +55,9 @@ export default function FirebaseJWT() {
       const data = await response.json();
 
       if (data.error) {
-        setError(data.error.message);
+        setError(data.error_description || data.error);
       } else {
-        setJwt(data.idToken);
+        setJwt(data.access_token);
       }
     } catch (err) {
       setError('Failed to generate JWT: ' + err.message);
@@ -67,27 +68,27 @@ export default function FirebaseJWT() {
 
   return (
     <Layout
-      title="Firebase JWT Generator"
-      description="Generate Firebase JWT tokens for testing"
+      title="Supabase JWT Generator"
+      description="Generate Supabase JWT tokens for testing"
     >
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--10 col--offset-1">
-            <h1 className="margin-bottom--lg margin-top--xl">Firebase JWT Generator</h1>
+            <h1 className="margin-bottom--lg margin-top--xl">Supabase JWT Generator</h1>
 
             <div className="margin-bottom--lg" style={{ opacity: 0.8 }}>
               <p>
                 This tool runs entirely in your browser - no data is transmitted to our servers.
                 The source code is available on{' '}
-                <a href="https://github.com/backmesh/backmesh/blob/main/site/src/pages/firebase-jwt.tsx"
+                <a href="https://github.com/backmesh/backmesh/blob/main/site/src/pages/supabase-jwt.tsx"
                    target="_blank"
                    rel="noopener noreferrer">
                   GitHub
                 </a>. Only email and password authentication is supported.
-                Looking for Supabase instead? Check out the{' '}
-                <a href="/supabase-jwt"
+                Looking for Firebase instead? Check out the{' '}
+                <a href="/firebase-jwt"
                    rel="noopener noreferrer">
-                  Supabase JWT Generator
+                  Firebase JWT Generator
                 </a>.
               </p>
             </div>
@@ -109,20 +110,45 @@ export default function FirebaseJWT() {
                     outline: 'none',
                     background: 'transparent'
                   }}
+                  value={projectUrl}
+                  onChange={(e) => setProjectUrl(e.target.value)}
+                  placeholder="Supabase Project URL (e.g., https://xxx.supabase.co)"
+                />
+              </div>
+            </div>
+
+            <div className="margin-bottom--lg">
+              <div style={{
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                padding: '8px',
+              }}>
+                <input
+                  type="text"
+                  className="input"
+                  style={{
+                    width: '100%',
+                    border: 'none',
+                    padding: '0',
+                    fontSize: '14px',
+                    outline: 'none',
+                    background: 'transparent'
+                  }}
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
-                  placeholder="Firebase Public API Key"
+                  placeholder="Supabase public anon key"
                 />
               </div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8, marginTop: '4px' }}>
                 Need help finding your API key? Check this {' '}
-                <a href="/assets/images/firebase-fc40f907f92dc5f102a6a8291bb587b3.png"
+                <a href="/assets/images/supabase-aeb0aa55618e84cc66ee3e5762bff35c.png"
                    target="_blank"
                    rel="noopener noreferrer">
                   screenshot
                 </a>
               </div>
             </div>
+
             <div className="margin-bottom--lg">
               <div style={{
                 border: '1px solid #ccc',
