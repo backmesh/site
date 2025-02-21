@@ -133,6 +133,58 @@ const config: Config = {
         },
       ],
     },
+    footer: {
+      style: 'light',
+      links: [
+        {
+          title: 'Product',
+          items: [
+            {
+              label: 'Dashboard',
+              to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+            },
+            {
+              label: 'Pricing',
+              to: '/pricing',
+            },
+            {
+              label: 'Documentation',
+              to: '/docs',
+            },
+          ],
+        },
+        {
+          title: 'Utils',
+          items: [
+            {
+              label: 'Supabase JWT Generator',
+              to: '/supabase-jwt',
+            },
+            {
+              label: 'Firebase JWT Generator',
+              to: '/firebase-jwt',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Discord',
+              href: 'https://discord.backmesh.com',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/backmesh',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+          ],
+        },
+      ],
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
