@@ -73,7 +73,20 @@ export default function FirebaseJWT() {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--10 col--offset-1">
-            <h1 className="margin-bottom--xl margin-top--xl">Firebase JWT Generator</h1>
+            <h1 className="margin-bottom--lg margin-top--xl">Firebase JWT Generator</h1>
+
+            <div className="margin-bottom--lg" style={{ opacity: 0.8 }}>
+              <p>
+                This tool runs entirely in your browser - no data is transmitted to our servers.
+                The source code for this tool is available on{' '}
+                <a href="https://github.com/backmesh/backmesh/blob/main/site/src/pages/firebase-jwt.tsx"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  GitHub
+                </a>. Only email and password authentication is supported.
+              </p>
+            </div>
+
             <div className="margin-bottom--lg">
               <div style={{
                 border: '1px solid #ccc',
@@ -95,6 +108,14 @@ export default function FirebaseJWT() {
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder="Firebase Public API Key"
                 />
+              </div>
+              <div style={{ fontSize: '0.8rem', opacity: 0.8, marginTop: '4px' }}>
+                Need help finding your API key? Check the{' '}
+                <a href="https://backmesh.com/docs/firebase/#step-2-set-the-firebase-project-used-for-authentication"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Firebase setup guide
+                </a>
               </div>
             </div>
             <div className="margin-bottom--lg">
