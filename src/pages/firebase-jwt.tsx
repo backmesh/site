@@ -73,70 +73,92 @@ export default function FirebaseJWT() {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--10 col--offset-1">
-            <h1>Firebase JWT Generator</h1>
-            <div className="margin-bottom--md">
-              <label className="margin-bottom--sm">Firebase API Key:</label>
-              <input
-                type="text"
-                className="input"
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  marginBottom: '16px',
-                  borderRadius: '4px',
-                  border: '1px solid #ccc',
-                }}
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                placeholder="Enter Firebase API Key"
-              />
+            <h1 className="margin-bottom--xl margin-top--xl">Firebase JWT Generator</h1>
+            <div className="margin-bottom--lg">
+              <div style={{
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                padding: '8px',
+              }}>
+                <input
+                  type="text"
+                  className="input"
+                  style={{
+                    width: '100%',
+                    border: 'none',
+                    padding: '0',
+                    fontSize: '14px',
+                    outline: 'none',
+                    background: 'transparent'
+                  }}
+                  value={apiKey}
+                  onChange={(e) => setApiKey(e.target.value)}
+                  placeholder="Firebase Public API Key"
+                />
+              </div>
             </div>
-            <div className="margin-bottom--md">
-              <label className="margin-bottom--sm">Email:</label>
-              <input
-                type="email"
-                className="input"
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  marginBottom: '16px',
-                  borderRadius: '4px',
-                  border: '1px solid #ccc',
-                }}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
-              />
+            <div className="margin-bottom--lg">
+              <div style={{
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                padding: '8px',
+              }}>
+                <input
+                  type="email"
+                  className="input"
+                  style={{
+                    width: '100%',
+                    border: 'none',
+                    padding: '0',
+                    fontSize: '14px',
+                    outline: 'none',
+                    background: 'transparent'
+                  }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                />
+              </div>
             </div>
-            <div className="margin-bottom--md">
-              <label className="margin-bottom--sm">Password:</label>
-              <input
-                type="password"
-                className="input"
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  marginBottom: '16px',
-                  borderRadius: '4px',
-                  border: '1px solid #ccc',
-                }}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-              />
+
+            <div className="margin-bottom--xl">
+              <div style={{
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                padding: '8px',
+              }}>
+                <input
+                  type="password"
+                  className="input"
+                  style={{
+                    width: '100%',
+                    border: 'none',
+                    padding: '0',
+                    fontSize: '14px',
+                    outline: 'none',
+                    background: 'transparent'
+                  }}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                />
+              </div>
             </div>
-            <button
-              className="button button--primary button--lg"
-              onClick={generateJWT}
-              disabled={loading || !apiKey || !email || !password}
-            >
-              {loading ? 'Generating...' : 'Generate JWT'}
-            </button>
+
+            <div className="margin-bottom--xl">
+              <button
+                className="button button--primary button--lg"
+                onClick={generateJWT}
+                disabled={loading || !apiKey || !email || !password}
+              >
+                {loading ? 'Generating...' : 'Generate JWT'}
+              </button>
+            </div>
 
             {error && (
               <div
+                className="margin-bottom--md"
                 style={{
-                  marginTop: '16px',
                   padding: '12px',
                   backgroundColor: '#ffebee',
                   color: '#c62828',
@@ -148,10 +170,10 @@ export default function FirebaseJWT() {
             )}
 
             {jwt && (
-              <div className="margin-top--md">
-                <h3>Generated JWT:</h3>
+              <div className="margin-top--xl">
                 <div className="row">
                   <div className="col col--6">
+                    <h4 className="margin-bottom--md">JWT Token:</h4>
                     <div
                       style={{
                         padding: '12px',
@@ -164,6 +186,7 @@ export default function FirebaseJWT() {
                     </div>
                   </div>
                   <div className="col col--6">
+                    <h4 className="margin-bottom--md">Decoded Token:</h4>
                     <div
                       style={{
                         padding: '12px',
@@ -182,14 +205,6 @@ export default function FirebaseJWT() {
                           <pre style={{ margin: 0 }}>
                             {JSON.stringify(decodeJwt(jwt)?.payload, null, 2)}
                           </pre>
-                          {Object.keys(decodeJwt(jwt)?.customClaims || {}).length > 0 && (
-                            <>
-                              <h4 style={{ marginTop: '16px' }}>Custom Claims:</h4>
-                              <pre style={{ margin: 0 }}>
-                                {JSON.stringify(decodeJwt(jwt)?.customClaims, null, 2)}
-                              </pre>
-                            </>
-                          )}
                         </>
                       )}
                     </div>
