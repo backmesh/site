@@ -61,7 +61,7 @@ const config: Config = {
     [
       "posthog-docusaurus",
       {
-        apiKey: "phc_OePPf9AzyvZDpCBgBD8iviy2Ux4ZaWwQ9S50DbfhFqo",
+        apiKey: "phc_fZ3tyt5smshwvm17JYlrU8PbxUVlOoakvH2M5b6ktdO",
       },
     ],
     [
