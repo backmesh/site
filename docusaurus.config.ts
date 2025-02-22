@@ -190,6 +190,13 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ["dart"],
     },
+    scripts: [
+      {
+        src: '/js/tawk.js',
+        async: true,
+        defer: true,
+      },
+    ],
   } satisfies Preset.ThemeConfig,
 };
 
