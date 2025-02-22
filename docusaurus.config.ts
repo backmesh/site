@@ -126,7 +126,7 @@ const config: Config = {
           "aria-label": "Community",
         },
         {
-          href: "https://github.com/backmesh",
+          href: "https://github.com/backmesh/backmesh",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -147,9 +147,18 @@ const config: Config = {
               label: 'Pricing',
               to: '/pricing',
             },
+          ],
+        },
+        {
+          title: 'Content',
+          items: [
             {
-              label: 'Documentation',
+              label: 'Docs',
               to: '/docs',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
           ],
         },
@@ -170,16 +179,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
+              label: 'GitHub',
+              href: 'https://github.com/backmesh/backmesh',
+            },
+            {
+              label: 'Live Chat',
+              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
+            },
+            {
               label: 'Discord',
               href: 'https://discord.backmesh.com',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/backmesh',
-            },
-            {
-              label: 'Blog',
-              to: '/blog',
             },
           ],
         },
