@@ -141,7 +141,7 @@ export default function SupabaseJWT() {
               </div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8, marginTop: '4px' }}>
                 Need help finding your API key? Check this {' '}
-                <a href="/assets/images/supabase-aeb0aa55618e84cc66ee3e5762bff35c.png"
+                <a href="docs/supabase/#step-2-set-the-supabase-project-used-for-authentication"
                    target="_blank"
                    rel="noopener noreferrer">
                   screenshot

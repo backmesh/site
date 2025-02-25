@@ -116,7 +116,7 @@ export default function FirebaseJWT() {
               </div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8, marginTop: '4px' }}>
                 Need help finding your API key? Check this {' '}
-                <a href="/assets/images/firebase-fc40f907f92dc5f102a6a8291bb587b3.png"
+                <a href="docs/firebase/#step-2-set-the-firebase-project-used-for-authentication"
                    target="_blank"
                    rel="noopener noreferrer">
                   screenshot
