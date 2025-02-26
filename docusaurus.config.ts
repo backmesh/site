@@ -70,6 +70,12 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'AW-16884608531',
+      },
+    ],
+    [
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
