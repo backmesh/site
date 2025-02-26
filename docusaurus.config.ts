@@ -7,7 +7,12 @@ const config: Config = {
   // open source Firebase for LLM APIs
   // control panel for AI Apps
   // open source Firebase for LLM APIs
-  tagline: "Firebase for LLM APIs",
+  // Firebase for LLM APIs"
+  // open source BaaS for LLM APIs
+  // JWT Proxy for LLM APIs
+  // open source Backend for LLM APIs
+  // open source BaaS for AI apps
+  tagline: "Open Source BaaS for AI apps",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -100,11 +105,6 @@ const config: Config = {
       },
       items: [
         {
-          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
-          position: "left",
-          label: "Dashboard",
-        },
-        {
           to: "/pricing",
           position: "left",
           label: "Pricing",
@@ -118,6 +118,13 @@ const config: Config = {
           to: "blog",
           position: "left",
           label: "Blog",
+        },
+        {
+          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+          position: "right",
+          label: "Dashboard",
+          className: "navbar-button",
+          target: "_self",
         },
         {
           href: "https://discord.backmesh.com",
@@ -179,12 +186,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/backmesh/backmesh',
+              label: 'Questions?',
+              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
             },
             {
-              label: 'Live Chat',
-              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
+              label: 'GitHub',
+              href: 'https://github.com/backmesh/backmesh',
             },
             {
               label: 'Discord',

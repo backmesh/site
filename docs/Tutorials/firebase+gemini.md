@@ -4,9 +4,9 @@ slug: /firebase
 
 # Gemini, Firebase Auth and Flutter
 
-This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an API proxy in the Backmesh Dashboard and then using it in your app.
+This tutorial will guide you through how to call the Google Gemini API from a Flutter app that uses Firebase Authentication without a backend or cloud function using Backmesh. This will entail creating an LLM API Gatekeeper in the Backmesh Dashboard and then using it in your app.
 
-The Backmesh dashboard won't have any API proxies so click `New API Proxy` to get started
+The Backmesh dashboard won't have any API proxies so click `New` to get started
 
 ![Step 0 Screenshot](/emptydash.png)
 
@@ -28,17 +28,17 @@ Go to the Firebase dashboard to grab the project ID and public project key
 
 ![Firebase Screenshot](/firebase+gemini/firebase.png)
 
-And put them into the Backmesh API Proxy configuration
+And put them into the Backmesh LLM API Gatekeeper configuration
 
 ![Step 2 Screenshot](/firebase+gemini/step2.png)
 
-## Step 3: Safely use the Backmesh API proxy in your app using the Firebase Auth JWT
+## Step 3: Safely use the Backmesh LLM API Gatekeeper in your app using the Firebase Auth JWT
 
-Grab the Backmesh API proxy URL provided:
+Grab the Backmesh LLM API Gatekeeper URL provided:
 
 ![Step 3 Screenshot](/firebase+gemini/step3.png)
 
-Now you are ready to make API calls in Flutter through the Backmesh proxy URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
+Now you are ready to make API calls in Flutter through the Backmesh LLM API Gatekeeper URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
 
 ```dart title="gemini.dart"
 import 'dart:io';
@@ -63,4 +63,4 @@ client = createModelWithBaseUri(
 )
 ```
 
-Backmesh proxy will take over from here and relay the API request with the encrypted private token.
+Backmesh will take over from here and relay the API request with the encrypted private token.

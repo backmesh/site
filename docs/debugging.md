@@ -5,7 +5,7 @@ slug: /debugging
 
 # Debugging
 
-You have created a JWT LLM Proxy and are ready to use it to proxy your LLM API calls. But when you try to call the proxy you get an error. What do you do?
+You have created a Backmesh LLM API Gatekeeper and are ready to use it use one of the LLM APIs. But when you start sending requests you get an error. What do you do?
 
 ## 1. Make sure your LLM API key is properly configured
 
@@ -21,7 +21,7 @@ Create a test user with your authentication provider using email and password au
 
 ## 3. Make sure your LLM SDK of choice is properly configured
 
-Backmesh JWT LLM Proxies are compatible with any LLM SDKs and app frameworks. Make sure your LLM SDK is properly configured to let you override the base URL of the LLM API with that of the Backmesh JWT proxy. Check out our tutorials for examples on how to do this for different frameworks:
+Backmesh LLM API Gatekeepers are compatible with any LLM SDKs and app frameworks. Make sure your LLM SDK is properly configured to let you override the base URL of the LLM API with that of the Backmesh Gatekeeper. Check out our tutorials for examples on how to do this for different frameworks:
 
 - [Flutter app using Firebase Authentication and Google Gemini API](/docs/firebase)
 - [Javascript web app using Supabase Authentication and OpenAI API](/docs/supabase)
