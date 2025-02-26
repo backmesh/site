@@ -6,7 +6,7 @@ slug: /
 # Introduction
 
 Backmesh is an open source Backend as a Service (BaaS) for AI apps. It lets you securely call LLM APIs directly from your mobile or web app using **any LLM SDK** without exposing private API keys. The only changes in your app are to replace:
-1. The LLM API URL with the Backmesh URL.
+1. The LLM API URL with the Backmesh Gatekeeper URL.
 2. The LLM private key with the authenticated user's JWT.
 
 ```js title="openai.ts"
@@ -26,7 +26,7 @@ const client = new OpenAI({
 
 ## How is the LLM API protected
 
-- *JWT Authentication:* Requests are verified with [JWTs](https://firebase.google.com/docs/auth/admin/verify-id-tokens) from the app's authentication provider so only your users have access to the LLM API via Backmesh.
+- *JWT Authentication:* Requests are verified with [JWTs](https://firebase.google.com/docs/auth/admin/verify-id-tokens) from the app's authentication provider so only your users have access to the LLM API via Backmesh Gatekeeper.
 - *Rate limits per user:* Configurable per-user rate limits to prevent abuse (e.g. no more than 5 OpenAI API calls per user per hour).
 - *Resource access control:* Sensitive API resources like [Files](https://platform.openai.com/docs/api-reference/files) and [Threads](https://platform.openai.com/docs/api-reference/threads) are protected so only the users that create them can continue to access them.
 
