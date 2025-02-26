@@ -30,7 +30,7 @@ export default function Home() {
               <p className="hero__subtitle">Backend as a Service to securely call LLM APIs from your app using any SDK with analytics per user out of the box.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
-                <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="https://backmesh.com/app"}>Start trial</button>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function Home() {
             <h1 style={{width: '100%', paddingBottom: '60px'}}>Ready to get started?</h1>
           </div>
           <div style={{ display: 'flex', gap: '20px', marginTop: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
+            <button className="button button--primary button--lg" onClick={() => window.location.href="https://backmesh.com/app"}>Start trial</button>
             <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
           </div>
         </div>

@@ -126,7 +126,7 @@ const config: Config = {
           label: "Blog",
         },
         {
-          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://backmesh.com/app",
           position: "right",
           label: "Dashboard",
           className: "navbar-button",
@@ -154,7 +154,7 @@ const config: Config = {
           items: [
             {
               label: 'Dashboard',
-              to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+              to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://backmesh.com/app",
             },
             {
               label: 'Pricing',
