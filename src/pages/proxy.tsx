@@ -20,43 +20,53 @@ function BrowserWindow({ children, style }: {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const [imagesLoaded, setImagesLoaded] = React.useState(false);
+
+  // Add loading handler
+  const handleImageLoad = () => {
+    setImagesLoaded(true);
+  };
+
   return (
     <Layout description={siteConfig.tagline}>
-      <div className="hero hero">
+      <div className="hero">
         <div className="container">
-          <div className="row">
-            <div className="col col--6 padding--lg">
-              <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Backmesh is an open source BaaS (Backend as a Service) that safely integrates your app with LLM APIs and Stripe Webhooks so you can focus on building.</p>
-              {/* <p className="hero__subtitle">Backmesh is an open source BaaS (Backend as a Service) for AI apps. Start with a Stripe Integration for Subscriptions and a safe JWT Proxy to call OpenAI and other LLM APIs.</p> */}
-              {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
-                <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
-                <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
+          <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
+            {/* <h1 className="hero__title">JWT LLM API Proxies</h1> */}
+            <h1 className="hero__title">Use LLM APIs without a backend</h1>
+            <p className="hero__subtitle">Securely call LLM APIs from your app using your authentication provider's JWTs. No backend or SDK needed.</p>
+          </div>
+          <div className="text--center">
+            <img
+              alt="Proxy"
+              style={{
+                width: '60%', 
+                marginTop: '20px',
+                opacity: imagesLoaded ? 1 : 0,
+                transition: 'opacity 0.3s'
+              }}
+              src={'proxy.gif'}
+              onLoad={handleImageLoad}
+            />
+            {!imagesLoaded && (
+              <div style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div>Loading...</div>
               </div>
-            </div>
-            <div className="col col--6 padding--lg">
-              <BrowserWindow>
-                <img
-                  alt="Backmesh Code Sample"
-                  className='shadow--tl browser-content'
-                  src={'typewriter.gif'}
-                />
-              </BrowserWindow>
-            </div>
+            )}
           </div>
         </div>
       </div>
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%'}}>Products offered</h1>
+            <h1 style={{width: '100%'}}>How is the LLM API protected
+            </h1>
           </div>
           <div className="row padding--lg">
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>JWT LLM API Proxy</h3>
+                  <h3>Authenticated proxy</h3>
                 </div>
                 <div className="card__body">
                   <p>
@@ -68,7 +78,7 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Stripe Integration</h3>
+                  <h3>Rate limits per user</h3>
                 </div>
                 <div className="card__body padding-vert-md">
                   <p>
@@ -80,7 +90,7 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Datastore</h3>
+                  <h3>API resource access control</h3>
                 </div>
                 <div className="card__body">
                   <p>
@@ -113,18 +123,48 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-      <div className="hero">
+      <div className="hero hero">
         <div className="container">
-          <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
-            <h1 style={{width: '100%', marginBottom: '60px'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is your next backend. It is deployed on the Edge and battle tested to let your app safely use LLMs and Stripe.</p>
+          <div className="row">
+            <div className="col col--6 padding--lg">
+              <h1 style={{width: '100%', marginBottom: '60px'}}>How does it work</h1>
+              <p className="hero__subtitle">The JWT LLM Proxy sits between your app and the LLM APIs. In your app, replace the LLM API url with Backmesh's URL and the LLM private key with your auth provider's JWTs.</p>
+              {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
+              {/* <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
+                <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
+              </div> */}
+            </div>
+            <div className="col col--6 padding--lg">
+              <BrowserWindow>
+                <img
+                  alt="Backmesh Code Sample"
+                  className='shadow--tl browser-content'
+                  src={'typewriter.gif'}
+                  onLoad={handleImageLoad}
+                />
+              </BrowserWindow>
+            </div>
           </div>
-          <div className="text--center">
-            <img
-              alt="Proxy"
-              style={{width: '60%', marginTop: '20px'}}
-              src={'proxy.gif'}
-            />
+        </div>
+      </div>
+
+      <div className="hero hero--gradient">
+        <div className="container">
+          <div className="row padding--md text--center">
+            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages
+            </h1>
+            <p style={{width: '100%'}} className="hero__subtitle">All LLM API calls are instrumented so you can identify usage patterns, reduce costs and improve user satisfaction within your AI applications.</p>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <BrowserWindow style={{width: '70%', marginTop: '20px'}}>
+              <img
+                alt="User LLM Analytics"
+                className='shadow--tl browser-content'
+                src={'analytics.png'}
+                onLoad={handleImageLoad}
+              />
+            </BrowserWindow>
           </div>
         </div>
       </div>

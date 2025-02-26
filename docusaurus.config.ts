@@ -7,7 +7,7 @@ const config: Config = {
   // open source Firebase for LLM APIs
   // control panel for AI Apps
   // open source Firebase for LLM APIs
-  tagline: "Firebase for LLM APIs",
+  tagline: "Build in days, not weeks",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -100,9 +100,9 @@ const config: Config = {
       },
       items: [
         {
-          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+          to: "docs",
           position: "left",
-          label: "Dashboard",
+          label: "Docs",
         },
         {
           to: "/pricing",
@@ -110,14 +110,25 @@ const config: Config = {
           label: "Pricing",
         },
         {
-          to: "docs",
-          position: "left",
-          label: "Docs",
+          type: 'dropdown',
+          label: 'Products',
+          position: 'left',
+          items: [
+            {
+              to: "/proxy",
+              label: "JWT LLM Proxy",
+            },
+            {
+              to: "/stripe",
+              label: "Stripe Integration",
+            },
+          ],
         },
         {
-          to: "blog",
-          position: "left",
-          label: "Blog",
+          to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
+          position: "right",
+          label: "Dashboard",
+          className: "navbar-button", // Add this line
         },
         {
           href: "https://discord.backmesh.com",
@@ -139,6 +150,14 @@ const config: Config = {
         {
           title: 'Product',
           items: [
+            {
+              label: 'JWT LLM Proxy',
+              to: '/proxy',
+            },
+            {
+              label: 'Stripe Integration',
+              to: '/stripe',
+            },
             {
               label: 'Dashboard',
               to: process.env.NODE_ENV === 'development' ? "http://localhost:8000" : "https://app.backmesh.com",
@@ -179,12 +198,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/backmesh/backmesh',
+              label: 'Questions?',
+              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
             },
             {
-              label: 'Live Chat',
-              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
+              label: 'GitHub',
+              href: 'https://github.com/backmesh/backmesh',
             },
             {
               label: 'Discord',

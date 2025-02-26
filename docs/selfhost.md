@@ -52,7 +52,7 @@ yarn deploy
 
 ```bash
 curl --request POST \
-  --url <YOUR_BACKMESH_PROXY_URL>/v1/crud/<BACKMESH_UID> \
+  --url <YOUR_BACKMESH_PROXY_URL>/v1/crud/proxy/<BACKMESH_UID> \
   --header 'authorization: Bearer <JWT>' \
   --header 'content-type: application/json' \
   --data '{
