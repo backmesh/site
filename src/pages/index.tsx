@@ -117,7 +117,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
             <h1 style={{width: '100%', marginBottom: '60px'}}>What is a Backmesh</h1>
-            <p className="hero__subtitle">Backmesh is a thoroughly tested backend as a service deployed on Cloudflare to let your app safely use LLMs.</p>
+            <p className="hero__subtitle">Backmesh is a thoroughly tested Backend as a Service deployed on Cloudflare to let your app safely use LLMs.</p>
           </div>
           <div className="text--center">
             <img
