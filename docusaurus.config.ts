@@ -76,6 +76,12 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-5DZ7WT5X',
+      },
+    ],
+    [
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
