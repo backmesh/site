@@ -27,7 +27,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--6 padding--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Securely call LLM APIs from your mobile or web app using any SDK. No backend needed and analytics per user out of the box.</p>
+              <p className="hero__subtitle">Backend as a Service to securely call LLM APIs from your app using any SDK with analytics per user out of the box.</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://app.backmesh.com"}>Start trial</button>
@@ -49,18 +49,18 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%'}}>How is the LLM API protected
+            <h1 style={{width: '100%'}}>How is the LLM API protected by Backmesh
             </h1>
           </div>
           <div className="row padding--lg">
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
-                  <h3>Authenticated proxy</h3>
+                  <h3>JWT Authentication</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the LLM API via the Backmesh proxy.
+                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the LLM API via Backmesh.
                   </p>
                 </div>
               </div>
@@ -116,14 +116,14 @@ export default function Home() {
       <div className="hero">
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
-            <h1 style={{width: '100%', marginBottom: '60px'}}>How Backmesh works</h1>
-            <p className="hero__subtitle">Backmesh is a proxy deployed close to your users that sits between your web or mobile app and the LLM APIs.</p>
+            <h1 style={{width: '100%', marginBottom: '60px'}}>What is a Backmesh</h1>
+            <p className="hero__subtitle">Backmesh is a thoroughly tested backend as a service deployed on Cloudflare to let your app safely use LLMs.</p>
           </div>
           <div className="text--center">
             <img
-              alt="Proxy"
+              alt="Overview"
               style={{width: '60%', marginTop: '20px'}}
-              src={'proxy.gif'}
+              src={'overview.gif'}
             />
           </div>
         </div>

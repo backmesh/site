@@ -18,11 +18,11 @@ Let's quickly go over authorization and the two different types of authenticatio
 
 For example, Firebase provides user authentication, but only properly configured Firestore security rules provide authorization to your database. Furthermore, only adding Firebase AppCheck can provide client app authentication. More about that [here](https://firebase.google.com/docs/firestore/security/overview).
 
-## How does Backmesh protect your LLM API Proxy
+## How does Backmesh protect your LLM API
 
-Backmesh protects your LLM API proxy in four different ways:
+Backmesh protects your LLM API in four different ways:
 
-1. JWT user authentication to ensure that requests to the proxy securing your private key API come from one of your users. However, this by itself does not provide authorization about which specific users are allowed to make which requests to the proxy, or how many requests a specific user can make.
+1. JWT user authentication to ensure that requests to the LLM API come from one of your users. However, this by itself does not provide authorization about which specific users are allowed to make which requests to the LLM API, or how many requests a specific user can make.
 
 2. Backmesh lets you set rate limits for each of your users e.g. no user should be calling a given API more than X times per hour. A screenshot from the dashboard:
 
