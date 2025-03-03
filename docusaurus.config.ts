@@ -81,17 +81,6 @@ const config: Config = {
         containerId: 'GTM-5DZ7WT5X',
       },
     ],
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          {
-            to: "https://forms.gle/DyceYMGhUesCJCEJ8", // The destination URL
-            from: ["/updates"], // The source URL(s)
-          },
-        ],
-      },
-    ],
   ],
 
   themeConfig: {
@@ -184,6 +173,11 @@ const config: Config = {
         {
           title: 'Utils',
           items: [
+            {
+              label: 'LLM Comparator',
+              to: 'https://llmcomp.backmesh.com',
+              target: '_self',
+            },
             {
               label: 'Supabase JWT Generator',
               to: '/supabase-jwt',
