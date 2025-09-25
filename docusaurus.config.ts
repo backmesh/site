@@ -12,7 +12,7 @@ const config: Config = {
   // JWT Proxy for LLM APIs
   // open source Backend for LLM APIs
   // open source BaaS for AI apps
-  tagline: "Open Source BaaS for AI apps",
+  tagline: "Don't ship LLM API keys in your app",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here

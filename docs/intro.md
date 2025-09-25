@@ -5,9 +5,9 @@ slug: /
 
 # Introduction
 
-Backmesh is an open source Backend as a Service (BaaS) for AI apps. It lets you securely call LLM APIs directly from your mobile or web app using **any LLM SDK** without exposing private API keys. The only changes in your app are to replace:
-1. The LLM API URL with the Backmesh Gatekeeper URL.
-2. The LLM private key with the authenticated user's JWT.
+Securely call LLM APIs directly from your mobile or web app using **any LLM SDK** without exposing private API keys. Only 2 changes needed in your app:
+1. Replace the LLM API URL with the Backmesh Gatekeeper URL.
+2. Replace the LLM private key with the authenticated user's JWT.
 
 ```js title="openai.ts"
 import OpenAI from "openai";
@@ -24,11 +24,15 @@ const client = new OpenAI({
 });
 ```
 
+## What is Backmesh
+
+Backmesh is an open-source, thoroughly tested backend that uses military grade encryption to protect your LLM API key and offer an API Gatekeeper to let your app safely call the API
+
 ## How is the LLM API protected
 
-- *JWT Authentication:* Requests are verified with [JWTs](https://firebase.google.com/docs/auth/admin/verify-id-tokens) from the app's authentication provider so only your users have access to the LLM API via Backmesh Gatekeeper.
-- *Rate limits per user:* Configurable per-user rate limits to prevent abuse (e.g. no more than 5 OpenAI API calls per user per hour).
-- *Resource access control:* Sensitive API resources like [Files](https://platform.openai.com/docs/api-reference/files) and [Threads](https://platform.openai.com/docs/api-reference/threads) are protected so only the users that create them can continue to access them.
+- **🛡️ JWT Authentication:** Requests are verified with [JWTs](https://firebase.google.com/docs/auth/admin/verify-id-tokens) from the app's authentication provider so only your users have access to the LLM API via Backmesh Gatekeeper.
+- **🚧 Rate limits per user:** Configurable per-user rate limits to prevent abuse (e.g. no more than 5 OpenAI API calls per user per hour).
+- **🔐 API resource access control:** Sensitive API resources like [Files](https://platform.openai.com/docs/api-reference/files) and [Threads](https://platform.openai.com/docs/api-reference/threads) are protected so only the users that create them can continue to access them.
 
 For more details, see the [security documentation](/docs/security).
 
@@ -50,7 +54,7 @@ Leave a comment on [Discord](https://discord.backmesh.com) if your provider or L
 
 Backmesh will automatically instrument LLM requests to let you understand LLM API usage across your users e.g. error rates, costs, response times across models, etc. Please leave a comment on [Discord](https://discord.backmesh.com) with more information about what LLM API endpoints you are using and what analytics you would like to see.
 
-## Hosting
+## Hosting Options
 
 Backmesh is open source and can be [self hosted](/docs/selfhost) in your own Cloudflare account which includes a generous free tier. We also offer a hosted [SaaS](https://app.backmesh.com) with different [pricing plans](/pricing). LLM API analytics are displayed in the SaaS dashboard only though.
 
