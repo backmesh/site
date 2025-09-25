@@ -58,7 +58,7 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%'}}>How is the LLM API protected by Backmesh
+            <h1 style={{width: '100%'}}>Use an open-source, battle-tested backend to protect your LLM API key
             </h1>
           </div>
           <div className="row padding--lg">
