@@ -22,28 +22,37 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout description={siteConfig.tagline}>
-      <div className="hero hero">
+      <div className="hero">
         <div className="container">
-          <div className="row">
-            <div className="col col--6 padding--lg">
+          <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Backend as a Service to securely call LLM APIs from your app without exposing private keys and using any LLM SDK.</p>
+              <p className="hero__subtitle">Hide LLM secret keys in your app and avoid leaks that lead to thousands of dollars in LLM API costs 💸🚨</p>
               {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '50px' }}>
+            </div>
+            <div className="row">
+              <div className="col col--6 padding--lg">
+                <BrowserWindow>
+                  <img
+                    alt="Backmesh Code Sample"
+                    className='shadow--tl browser-content'
+                    src={'bad.jpg'}
+                  />
+                </BrowserWindow>
+              </div>
+              <div className="col col--6 padding--lg">
+                <BrowserWindow>
+                  <img
+                    alt="Backmesh Code Sample"
+                    className='shadow--tl browser-content'
+                    src={'good.jpg'}
+                  />
+                </BrowserWindow>
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="https://backmesh.com/app"}>Start trial</button>
                 <button className="button button--primary button--lg" onClick={() => window.location.href="/docs"}>Documentation</button>
               </div>
-            </div>
-            <div className="col col--6 padding--lg">
-              <BrowserWindow>
-                <img
-                  alt="Backmesh Code Sample"
-                  className='shadow--tl browser-content'
-                  src={'typewriter.gif'}
-                />
-              </BrowserWindow>
-            </div>
-          </div>
         </div>
       </div>
       <div className="hero hero--gradient">
@@ -56,6 +65,7 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
+                  <h3>🛡️</h3>
                   <h3>JWT Authentication</h3>
                 </div>
                 <div className="card__body">
@@ -68,6 +78,7 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
+                  <h3>🚧</h3>
                   <h3>Rate limits per user</h3>
                 </div>
                 <div className="card__body padding-vert-md">
@@ -80,6 +91,7 @@ export default function Home() {
             <div className="col col--4 padding--sm">
               <div className="card">
                 <div className="card__header">
+                  <h3>🔐</h3>
                   <h3>API resource access control</h3>
                 </div>
                 <div className="card__body">
@@ -117,7 +129,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
             <h1 style={{width: '100%', marginBottom: '60px'}}>What is Backmesh</h1>
-            <p className="hero__subtitle">Backmesh is a thoroughly tested BaaS that offers an LLM API Gatekeeper to let your app safely call LLM APIs.</p>
+            <p className="hero__subtitle">Backmesh is an open-source, thoroughly tested backend that uses military grade encryption to protect your LLM API key and offer an API Gatekeeper to let your app safely call the API</p>
           </div>
           <div className="text--center">
             <img
