@@ -26,8 +26,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Hide LLM secret keys in your app and avoid leaks that lead to thousands of dollars in LLM API costs 💸🚨</p>
-              {/* <p className="hero__subtitle">No SDK needed and LLM user analytics included.</p> */}
+              <p className="hero__subtitle">Hide API keys in your app and avoid <a href="https://thehackernews.com/2023/06/over-100000-stolen-chatgpt-account.html">leaks</a> that lead to thousands of dollars in API bills 💸🚨</p>
             </div>
             <div className="row">
               <div className="col col--6 padding--lg">
@@ -58,7 +57,7 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%'}}>Use an open-source, battle-tested backend to protect your LLM API key
+            <h1 style={{width: '100%'}}>Use an open-source, battle-tested backend to protect your API key
             </h1>
           </div>
           <div className="row padding--lg">
@@ -70,7 +69,7 @@ export default function Home() {
                 </div>
                 <div className="card__body">
                   <p>
-                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the LLM API via Backmesh.
+                    Requests are verified with JWTs from the app's authentication provider so only your users have access to the API via Backmesh.
                   </p>
                 </div>
               </div>
@@ -92,11 +91,11 @@ export default function Home() {
               <div className="card">
                 <div className="card__header">
                   <h3>🔐</h3>
-                  <h3>API resource access control</h3>
+                  <h3>LLM API resource access control</h3>
                 </div>
                 <div className="card__body">
                   <p>
-                    Sensitive API resources like <a href="https://platform.openai.com/docs/api-reference/files">Files</a> and <a href="https://platform.openai.com/docs/api-reference/threads">Threads</a> are protected so only the users that create them can continue to access them.
+                    Sensitive LLM API resources like <a href="https://platform.openai.com/docs/api-reference/files">Files</a> and <a href="https://platform.openai.com/docs/api-reference/threads">Threads</a> are protected so only the users that create them can continue to access them.
                   </p>
                 </div>
               </div>
@@ -129,7 +128,7 @@ export default function Home() {
         <div className="container">
           <div className="row padding--md text--center" style={{ display: 'flex', justifyContent: 'center'}}>
             <h1 style={{width: '100%', marginBottom: '60px'}}>What is Backmesh</h1>
-            <p className="hero__subtitle">Backmesh is an open-source, thoroughly tested backend that uses military grade encryption to protect your LLM API key and offer an API Gatekeeper to let your app safely call the API</p>
+            <p className="hero__subtitle">Backmesh is an open-source, thoroughly tested backend that uses military grade encryption to protect your API key and offer an API Gatekeeper to let your app safely call the API</p>
           </div>
           <div className="text--center">
             <img
@@ -143,9 +142,9 @@ export default function Home() {
       <div className="hero hero--gradient">
         <div className="container">
           <div className="row padding--md text--center">
-            <h1 style={{width: '100%', marginBottom: '60px'}}>LLM User Analytics without packages
+            <h1 style={{width: '100%', marginBottom: '60px'}}>API usage per user without packages
             </h1>
-            <p style={{width: '100%'}} className="hero__subtitle">All LLM API calls are instrumented so you can identify usage patterns, reduce costs and improve user satisfaction within your AI applications.</p>
+            <p style={{width: '100%'}} className="hero__subtitle">All API calls are instrumented so you can identify usage patterns, reduce costs and improve user satisfaction within your app.</p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <BrowserWindow style={{width: '70%', marginTop: '20px'}}>
