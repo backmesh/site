@@ -4,7 +4,7 @@ slug: /supabase
 
 # OpenAI, Supabase Auth and Javascript
 
-This tutorial will guide you through how to call the OpenAI API from a Javascript web app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an LLM API Gatekeeper in the Backmesh Dashboard and then using it in your app.
+This tutorial will guide you through how to call the OpenAI API from a Javascript web app that uses Supabase Authentication without a backend or cloud function using Backmesh. This will entail creating an API Gatekeeper in the Backmesh Dashboard and then using it in your app.
 
 The Backmesh dashboard won't have any API proxies so click `New` to get started
 
@@ -28,17 +28,17 @@ Go to the Supabase dashboard to grab the project ID and public project key
 
 ![Supabase Screenshot](/supabase+openai/supabase.png)
 
-And put them into the Backmesh LLM API Gatekeeper configuration
+And put them into the Backmesh API Gatekeeper configuration
 
 ![Step 2 Screenshot](/supabase+openai/step2.png)
 
-## Step 3: Safely use the Backmesh LLM API Gatekeeper in your app using the Supabase Auth JWT
+## Step 3: Safely use the Backmesh API Gatekeeper in your app using the Supabase Auth JWT
 
-Grab the Backmesh LLM API Gatekeeper URL provided:
+Grab the Backmesh API Gatekeeper URL provided:
 
 ![Step 3 Screenshot](/supabase+openai/step3.png)
 
-Now you are ready to make API calls in Javascript through the Backmesh LLM API Gatekeeper URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
+Now you are ready to make API calls in Javascript through the Backmesh API Gatekeeper URL by passing in the user’s JWT token from your app’s authentication provider instead of the API private key to the API client.
 
 ```js title="openai.js"
 import OpenAI from "openai";
