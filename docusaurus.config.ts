@@ -192,10 +192,6 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Questions?',
-              href: 'https://tawk.to/chat/67b9b45a4db380190f4dfecd/1ikmmh09h',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/backmesh/backmesh',
             },
